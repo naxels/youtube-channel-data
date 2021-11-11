@@ -2,7 +2,8 @@
 
 ## Goal:
 Using the Youtube Data API, get all videos data from a channel through the channel's playlist and output certain data to `channel title` file, by only providing a single video-id/youtube video url from that channel.
-To start, only CSV output is supported
+
+(To start, only CSV output is supported)
 
 The video-id / url is needed because the Youtube Data API often cannot find the channel through the channel API call.
 
@@ -11,10 +12,10 @@ Needed to get a Youtube channel's video metadata in order to make a shared sprea
 And instead of grabbing the data using web scraping, used the API.
 
 ## Usage:
-First, get a Youtube Data API key from Google through
+First, get a Youtube Data API key from Google through:
 https://console.cloud.google.com/home/dashboard
 
-clone the repo and replace the :API-Key value in `resources/config.edn`
+Clone the repo and replace the :API-Key value in `resources/config.edn` with the API key from Google.
 
 Next, ensure you have Java & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
