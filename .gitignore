@@ -1,0 +1,10 @@
+.calva
+.clj-kondo
+.cpcache
+.lsp
+.nrepl-port
+.DS_Store
+output/*
+!output/.keep
+target/*
+.portal

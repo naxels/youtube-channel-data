@@ -1,0 +1,1 @@
+clj -M -m youtube-channel-data.core $1
