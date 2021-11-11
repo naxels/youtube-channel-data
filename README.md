@@ -14,7 +14,7 @@ And instead of grabbing the data using web scraping, used the API.
 First, get a Youtube Data API key from Google through
 https://console.cloud.google.com/home/dashboard
 
-and replace the :API-Key value in `resources/config.edn`
+clone the repo and replace the :API-Key value in `resources/config.edn`
 
 Next, ensure you have Java & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
@@ -30,4 +30,4 @@ Or create a build using:
 
 And then run with:
 
-`java -jar youtube-channel-data-standalone.jar (video-id / youtube video url)`
+`java -jar target/youtube-channel-data-standalone.jar (video-id / youtube video url)`
