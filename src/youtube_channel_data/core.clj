@@ -11,9 +11,20 @@
 (defn parse-input
   "Instead of decoding / conditionals, just remove known parts from the input"
   [cli-arg]
-  (-> cli-arg
-      (str/replace-first "https://www.youtube.com/watch?v=" "")
-      (str/replace-first "https://youtu.be/" "")))
+  ;; Previous format cut out url prior to video id but not after. This regex
+  ;; cuts out both before and what's after the video id, e.g. "?t=5".
+
+  ;; re-find returns [whole-match group-1 group-2 ... group-n]. The video id is
+  ;; in group-1, "([^\?&]+)" (read as "not a query delimiter"). There's only one group, 
+  ;; so the vector looks like [url video-id], so we destructure it.
+
+  ;; This all fails if the user passes in a raw id, so check if the re finds
+  ;; anything. If not, return the string.
+  (let [[_ video-id :as url-match] (re-find #"(?:be\/|\?v=)([^\?&]+)[\?&]*" cli-arg)]
+      (if url-match
+          video-id
+          cli-arg)))
+
 
 ; Output map closure
 (defn output-map-builder
