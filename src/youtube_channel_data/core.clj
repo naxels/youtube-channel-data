@@ -15,8 +15,8 @@
   ;; cuts out both before and what's after the video id, e.g. "?t=5".
 
   ;; re-find returns [whole-match group-1 group-2 ... group-n]. The video id is
-  ;; in group-1, "(.+)". There's only one group, so the vector looks like
-  ;; [url video-id], so we destructure it.
+  ;; in group-1, "([^\?&]+)" (read as "not a query delimiter"). There's only one group, 
+  ;; so the vector looks like [url video-id], so we destructure it.
 
   ;; This all fails if the user passes in a raw id, so check if the re finds
   ;; anything. If not, return the string.
