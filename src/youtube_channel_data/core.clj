@@ -21,7 +21,6 @@
   ;; This all fails if the user passes in a raw id, so check if the re finds
   ;; anything. If not, return the string.
   (let [[_ video-id :as url-match] (re-find #"(?:be\/|\?v=)([^\?&]+)[\?&]*" cli-arg)]
-      (println url-match)
       (if url-match
           video-id
           cli-arg)))
