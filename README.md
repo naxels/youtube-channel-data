@@ -12,6 +12,9 @@ Needed to get a Youtube channel's video metadata in order to make a shared sprea
 And instead of grabbing the data using web scraping, used the API.
 
 ## Usage:
+
+This tool uses Bash scripts which requires a Unix distro. If you're on Windows, follow the below steps in WSL. 
+
 First, get a Youtube Data API key from Google through:
 https://console.cloud.google.com/home/dashboard
 
