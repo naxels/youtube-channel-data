@@ -13,7 +13,7 @@ And instead of grabbing the data using web scraping, used the API.
 
 ## Usage:
 
-This tool uses Bash scripts which requires a Unix distro. If you're on Windows, follow the below steps in WSL. 
+*This tool uses Bash scripts which requires a Linux/Unix distro. If you're on Windows, follow the below steps in WSL.*
 
 First, get a Youtube Data API key from Google through:
 https://console.cloud.google.com/home/dashboard
@@ -35,3 +35,5 @@ Or create a build using:
 And then run with:
 
 `java -jar target/youtube-channel-data-standalone.jar (video-id / youtube video url)`
+
+The resulting file will be stored in the output folder.
