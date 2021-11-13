@@ -3,7 +3,7 @@
   (:require [clojure.data.json :as json]
             [clojure.string :as str]
             [youtube-channel-data.youtube-api :as yt]
-            [youtube-channel-data.exporter.csv :as csv]))
+            [csv-exporter.core :as csv]))
 
 (declare seconds->minutes)
 (declare consume-playlist-pages)
@@ -15,7 +15,7 @@
   ;; cuts out both before and what's after the video id, e.g. "?t=5".
 
   ;; re-find returns [whole-match group-1 group-2 ... group-n]. The video id is
-  ;; in group-1, "([^\?&]+)" (read as "not a query delimiter"). There's only one group, 
+  ;; in group-1, "([^\?&]+)" (read as "not a query delimiter"). There's only one group,
   ;; so the vector looks like [url video-id], so we destructure it.
 
   ;; This all fails if the user passes in a raw id, so check if the re finds
