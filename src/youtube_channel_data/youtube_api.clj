@@ -17,7 +17,7 @@
 (defn query-params->query-string [m]
   (str/join "&"
             (for [[k v] m]
-              (str (name k) "="  (java.net.URLEncoder/encode v)))))
+              (str (name k) "="  (java.net.URLEncoder/encode v "UTF-8")))))
 
 ; Main API string builder closure
 (defn api
