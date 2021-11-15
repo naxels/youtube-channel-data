@@ -36,4 +36,4 @@ And then run with:
 
 `java -jar target/youtube-channel-data-standalone.jar (video-id / youtube video url)`
 
-The resulting file will be stored in the output folder.
+The resulting file will be stored in the output (if exists) or current folder.
