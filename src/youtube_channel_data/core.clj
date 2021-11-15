@@ -162,7 +162,7 @@
   [id-or-url]
   (println "Usage: Input Video id or Full youtube URL")
 
-  (println "Reading Youtube using API-Key:" (:API-Key yt/config))
+  (println "Reading Youtube using API-Key:" yt/config)
 
   ; get video id from args
   (let [video-id (parse-input id-or-url)]

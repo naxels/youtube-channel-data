@@ -2,10 +2,15 @@
   (:require [clojure.edn :as edn]
             [clojure.string :as str]))
 
-; Read API key
-(def config (edn/read-string (slurp "resources/config.edn")))
+; Read API key from env or config.edn
+(def config (or (System/getenv "GOOGLE_API_KEY")
+                (-> "resources/config.edn"
+                    (slurp)
+                    (edn/read-string)
+                    (:API-Key))))
 
-(def api-key {:key (:API-Key config)})
+; Turn API key to map
+(def api-key {:key config})
 
 ; Define url paths
 (def base-url "https://www.googleapis.com")

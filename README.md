@@ -18,7 +18,9 @@ And instead of grabbing the data using web scraping, used the API.
 First, get a Youtube Data API key from Google through:
 https://console.cloud.google.com/home/dashboard
 
-Clone the repo and replace the :API-Key value in `resources/config.edn` with the API key from Google.
+Setting the API key, either:
+- Set the GOOGLE_API_KEY environment variable to the API key from Google.
+- Clone the repo and replace the :API-Key value in `resources/config.edn` with the API key from Google.
 
 Next, ensure you have Java & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
