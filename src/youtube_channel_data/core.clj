@@ -3,7 +3,8 @@
   (:require [clojure.data.json :as json]
             [clojure.string :as str]
             [youtube-channel-data.youtube-api :as yt]
-            [csv-exporter.core :as csv]))
+            [csv-exporter.core :as csv]
+            [clojure.java.io :as io]))
 
 (declare seconds->minutes)
 (declare consume-playlist-pages)
@@ -23,7 +24,6 @@
     (if url-match
       video-id
       cli-arg)))
-
 
 ; Output map closure
 (defn output-map-builder
@@ -110,10 +110,18 @@
        (consume-playlist-pages)
        (flatten)))
 
+; Utility
 (defn seconds->minutes
   "Turn to minutes, rounded up or down based on seconds left"
   [seconds]
   (Math/round (/ seconds 60.0)))
+
+(defn output-location
+  "Output to output folder if exists, else to current location"
+  [channel-title]
+  (if (.exists (io/file "output"))
+    (str "output" (java.io.File/separator) channel-title)
+    (str channel-title)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
 (defn consume-playlist-pages
@@ -167,7 +175,7 @@
       ; get playlist id from channel api & title from channel api
       (let [playlist-id (channel-id->playlist-id channel-id)
             channel-title (channel-id->title channel-id)
-            output-location (str "output/" channel-title)
+            output-location (output-location channel-title)
             ; output-location-edn (str output-location ".edn")
             output-location-csv (str output-location ".csv")]
         (println "Playlist Id:" playlist-id)
