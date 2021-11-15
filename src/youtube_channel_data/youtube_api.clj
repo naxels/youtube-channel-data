@@ -21,7 +21,8 @@
 
 ; Main API string builder closure
 (defn api
-  "Returns fn with route filled in"
+  "Returns fn with route filled in.
+   Ultimately Returns https string encoded ready for slurp"
   [route]
   (fn
     [query-params]
