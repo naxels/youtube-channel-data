@@ -48,4 +48,4 @@ Or create a build using:
 
 And then run with:
 
-`java -jar target/youtube-channel-data-standalone.jar (video-id / youtube video url)`
+`java -jar target/youtube-channel-data.jar (video-id / youtube video url)`
