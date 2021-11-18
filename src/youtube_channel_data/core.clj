@@ -158,7 +158,7 @@
         output-map (output-map-builder video-durations)]
     (map output-map playlist-items)))
 
-(defn -main
+(defn pull-yt-channel-data
   [id-or-url]
   (println "Usage: Input Video id or Full youtube URL")
 
@@ -191,3 +191,10 @@
             ; (spit output-location-edn (prn-str playlist-items-transformed))
             (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
             (println "Data saved to" output-location-csv)))))))
+
+(defn -main
+  ([]
+   (do (println "Please enter a video id or YouTube video URL")
+       (System/exit 0)))
+  ([id-or-url]
+   (pull-yt-channel-data id-or-url)))
