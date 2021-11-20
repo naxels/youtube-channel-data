@@ -29,7 +29,7 @@ jobs:
         with:
           tools-deps: '1.10.3.1029'
       - name: Build release
-        run: clj -T:build uber
+        run: clojure -T:build uber
       - uses: actions/upload-artifact@v2
         with:
           name: jar
