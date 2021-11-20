@@ -1,1 +1,1 @@
-clj -M -m youtube-channel-data.core $1
+clj -M -m youtube-channel-data.core "$@"
