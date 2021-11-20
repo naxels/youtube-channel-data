@@ -26,6 +26,8 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/deps.edn') }}
       - name: Setup Clojure
         uses: DeLaGuardo/setup-clojure@master
+        with:
+          tools-deps: '1.10.3.1029'
       - name: Build release
         run: clj -T:build uber
       - uses: actions/upload-artifact@v2
