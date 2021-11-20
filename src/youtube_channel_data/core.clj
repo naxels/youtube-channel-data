@@ -1,29 +1,12 @@
 (ns youtube-channel-data.core
   (:gen-class)
-  (:require [clojure.data.json :as json]
-            [clojure.string :as str]
-            [youtube-channel-data.youtube-api :as yt]
-            [csv-exporter.core :as csv]
-            [clojure.java.io :as io]))
+  (:require   [clojure.string :as str]
+              [clojure.java.io :as io]
+              [csv-exporter.core :as csv]
+              [youtube-channel-data.youtube-api :as yt]
+              [youtube-channel-data.utilities :as u]))
 
-(declare seconds->minutes)
 (declare consume-playlist-pages)
-
-(defn parse-input
-  "Use RegEx to try to get the video-id from the input or return input"
-  [cli-arg]
-  ;; This regex cuts out both before and what's after the video id, e.g. "?t=5".
-
-  ;; re-find returns [whole-match group-1 group-2 ... group-n]. The video id is
-  ;; in group-1, "([^\?&]+)" (read as "not a query delimiter"). There's only one group,
-  ;; so the vector looks like [url video-id], so we destructure it.
-
-  ;; This all fails if the user passes in a raw id, so check if the re finds
-  ;; anything. If not, return the input.
-  (let [[_ video-id :as url-match] (re-find #"(?:be\/|\?v=)([^\?&]+)[\?&]*" cli-arg)]
-    (if url-match
-      video-id
-      cli-arg)))
 
 ; Output map closure
 (defn output-map-builder
@@ -42,41 +25,13 @@
 (defn video-key
   "Turn video to vec of id, duration"
   [vid]
-  [(:id vid) (seconds->minutes (.toSeconds (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
-
-(defn json-value-reader
-  [key value]
-  (if (= key :publishedAt)
-    (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
-    value))
-; Example of how to read: (.getYear (:publishedAt (playlist->json)))
-
-(defn json-video-value-reader
-  [key value]
-  (if (= key :duration)
-    (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
-    value))
-; Example of how to read: (.toMinutes (:duration (video->json)))
-
-(defn str->json
-  [value-fn-func]
-  (fn
-    [json-str]
-    (json/read-str json-str
-                   :value-fn value-fn-func ; each key/value will go through this function
-                   :key-fn keyword)))
-
-(def channel->json (str->json json-value-reader))
-
-(def playlist->json (str->json json-value-reader))
-
-(def video->json (str->json json-video-value-reader))
+  [(:id vid) (u/seconds->minutes (.toSeconds (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
 
 (defn video-id->channel-id
   [video-id]
   (->> (yt/videos {:part "snippet" :id video-id})
        (slurp)
-       (video->json)
+       (u/video->json)
        (:items)
        (first)
        (:snippet)
@@ -86,7 +41,7 @@
   [channel-id]
   (->> (yt/channels {:part "contentDetails" :id channel-id})
        (slurp)
-       (channel->json)
+       (u/channel->json)
        (:items)
        (first)
        (:contentDetails)
@@ -97,7 +52,7 @@
   [channel-id]
   (->> (yt/channels {:part "brandingSettings" :id channel-id})
        (slurp)
-       (channel->json)
+       (u/channel->json)
        (:items)
        (first)
        (:brandingSettings)
@@ -110,12 +65,6 @@
        (consume-playlist-pages)
        (flatten)))
 
-; Utility
-(defn seconds->minutes
-  "Turn to minutes, rounded up or down based on seconds left"
-  [seconds]
-  (Math/round (/ seconds 60.0)))
-
 (defn output-location
   "Output to output folder if exists, else to current location"
   [channel-title]
@@ -127,12 +76,12 @@
 (defn consume-playlist-pages
   ([url]
    (let [api-str (slurp url)
-         converted (playlist->json api-str)]
+         converted (u/playlist->json api-str)]
      (consume-playlist-pages (conj [] (:items converted)) url (:nextPageToken converted))))
   ([items-coll base-url page-token]
    (if page-token
      (let [api-str (slurp (str base-url "&pageToken=" page-token))
-           converted (playlist->json api-str)]
+           converted (u/playlist->json api-str)]
        (recur (conj items-coll (:items converted)) base-url (:nextPageToken converted))) ; learned that the function call can be replaced with recur
      items-coll)))
 
@@ -140,7 +89,7 @@
 (defn consume-video-lists
   [base-url ids]
   (let [api-str (slurp (str base-url "&id=" (str/join "," ids)))
-        converted (video->json api-str)]
+        converted (u/video->json api-str)]
     (:items converted)))
 
 (defn transform-playlist-items
@@ -165,7 +114,7 @@
   (println "Reading Youtube using API-Key:" yt/config)
 
   ; get video id from args
-  (let [video-id (parse-input id-or-url)]
+  (let [video-id (u/parse-input id-or-url)]
     (println "Video id found:" video-id)
 
     ; call video api with part=snippet and get channel id
