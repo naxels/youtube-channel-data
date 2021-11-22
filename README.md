@@ -49,3 +49,7 @@ Or create a build using:
 And then run with:
 
 `java -jar target/youtube-channel-data.jar (video-id / youtube video url)`
+
+Run tests with:
+
+`./test.sh`
