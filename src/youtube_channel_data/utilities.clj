@@ -22,7 +22,7 @@
                    :value-fn value-fn-func ; each key/value will go through this function
                    :key-fn keyword)))
 
-(def channel->json (str->json json-value-reader))
+(def channel->json (str->json (fn [_k v] v)))
 
 (def playlist->json (str->json json-value-reader))
 
