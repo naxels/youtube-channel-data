@@ -28,6 +28,8 @@ jobs:
         uses: DeLaGuardo/setup-clojure@master
         with:
           tools-deps: '1.10.3.1029'
+      - name: Run tests
+        run: clojure -X:test
       - name: Build release
         run: clojure -T:build uber
       - uses: actions/upload-artifact@v2
