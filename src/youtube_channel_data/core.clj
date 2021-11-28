@@ -73,6 +73,7 @@
     (str channel-title)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
+; Has to be consumed sequentially since we need the nextPageToken from the result
 (defn consume-playlist-pages
   ([url]
    (let [api-str (slurp url)
@@ -93,18 +94,19 @@
     (:items converted)))
 
 (defn transform-playlist-items
-  "Get duration from videos, transform to output map"
+  "Get duration from videos, parallelly grab and transform to output map"
   [playlist-items]
   (let [videos-data (->> playlist-items
                          (map (comp :videoId :resourceId :snippet))
                          (partition-all 50) ; partition per 50 id's
-                         (map
+                         (pmap
                           #(consume-video-lists (yt/videos {:part "contentDetails"}) %)) ; get all video data for id's
                          (flatten))
         ; turn into lookup map
         ; {video-id, java Duration parsed}
         video-durations (into {} (map video-key videos-data))
         output-map (output-map-builder video-durations)]
+    (shutdown-agents) ; close futures thread pool used by pmap
     (map output-map playlist-items)))
 
 (defn pull-yt-channel-data
