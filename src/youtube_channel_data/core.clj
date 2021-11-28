@@ -145,7 +145,9 @@
 
 (defn -main
   ([]
-   (do (println "Please enter a video id or YouTube video URL")
-       (System/exit 0)))
+   (println "No arguments found")
+   (println "Please enter a video id or YouTube video URL")
+   (System/exit 0))
   ([id-or-url]
-   (pull-yt-channel-data id-or-url)))
+   (pull-yt-channel-data id-or-url)
+   (println "All done, exiting")))
