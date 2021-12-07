@@ -110,7 +110,7 @@
     (map output-map playlist-items)))
 
 (defn pull-yt-channel-data
-  [id-or-url]
+  [id-or-url video-title-filter]
   (println "Reading Youtube using API-Key:" yt/config)
 
   ; get video id from args
@@ -124,7 +124,10 @@
       ; get playlist id from channel api & title from channel api
       (let [playlist-id (channel-id->playlist-id channel-id)
             channel-title (channel-id->title channel-id)
-            output-location (output-location channel-title)
+            ; add filter to output filename if set
+            output-location (output-location (if video-title-filter
+                                               (str channel-title "-" video-title-filter)
+                                               channel-title))
             ; output-location-edn (str output-location ".edn")
             output-location-csv (str output-location ".csv")]
         (println "Playlist Id:" playlist-id)
@@ -135,8 +138,14 @@
         (let [playlist-items (playlist-id->playlist-items playlist-id)]
           (println "Playlist items found:" (count playlist-items))
 
+          (when video-title-filter
+            (println "Filtering titles on:" video-title-filter))
+
           (println "Getting all videos for duration data.....")
-          (let [playlist-items-transformed (transform-playlist-items playlist-items)]
+          ; filter the values on video-title-filter if truthy
+          (let [playlist-items-transformed (cond->> playlist-items
+                                             video-title-filter (filter (fn [playlist-item] (str/includes? (str/lower-case (get-in playlist-item [:snippet :title] "")) video-title-filter)))
+                                             true (transform-playlist-items))]
             ; (spit output-location-edn (prn-str playlist-items-transformed))
             (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
             (println "Data saved to" output-location-csv)))))))
@@ -145,7 +154,11 @@
   ([]
    (println "No arguments found")
    (println "Please enter a video id or YouTube video URL")
+   (println "As a second argument you can enter a word or quoted sentence to filter the channel video titles on")
    (System/exit 0))
   ([id-or-url]
-   (pull-yt-channel-data id-or-url)
+   (pull-yt-channel-data id-or-url nil)
+   (println "All done, exiting"))
+  ([id-or-url video-title-filter]
+   (pull-yt-channel-data id-or-url (str/lower-case video-title-filter))
    (println "All done, exiting")))
