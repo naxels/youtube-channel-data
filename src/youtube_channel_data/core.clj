@@ -111,8 +111,6 @@
 
 (defn pull-yt-channel-data
   [id-or-url]
-  (println "Usage: Input Video id or Full youtube URL")
-
   (println "Reading Youtube using API-Key:" yt/config)
 
   ; get video id from args
