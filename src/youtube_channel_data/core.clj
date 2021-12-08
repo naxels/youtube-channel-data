@@ -143,8 +143,9 @@
 
           (println "Getting all videos for duration data.....")
           ; filter the values on video-title-filter if truthy
-          (let [playlist-items-transformed (cond->> playlist-items
-                                             video-title-filter (filter (fn [playlist-item] (str/includes? (str/lower-case (get-in playlist-item [:snippet :title] "")) video-title-filter)))
+          (let [title-has-search-query? (fn [playlist-item] (str/includes? (str/lower-case (get-in playlist-item [:snippet :title] "")) video-title-filter))
+                playlist-items-transformed (cond->> playlist-items
+                                             video-title-filter (filter title-has-search-query?)
                                              true (transform-playlist-items))]
             ; (spit output-location-edn (prn-str playlist-items-transformed))
             (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
@@ -154,7 +155,7 @@
   ([]
    (println "No arguments found")
    (println "Please enter a video id or YouTube video URL")
-   (println "As a second argument you can enter a word or quoted sentence to filter the channel video titles on")
+   (println "As a second argument you can enter a word or quoted sentence to output only the searched for channel's video titles")
    (System/exit 0))
   ([id-or-url]
    (pull-yt-channel-data id-or-url nil)
