@@ -143,9 +143,9 @@
 
           (println "Getting all videos for duration data.....")
           ; filter the values on video-title-filter if truthy
-          (let [title-has-search-query? (fn [playlist-item] (str/includes? (str/lower-case (get-in playlist-item [:snippet :title] "")) video-title-filter))
+          (let [title-match? (u/title-match-builder video-title-filter)
                 playlist-items-transformed (cond->> playlist-items
-                                             video-title-filter (filter title-has-search-query?)
+                                             video-title-filter (filter title-match?)
                                              true (transform-playlist-items))]
             ; (spit output-location-edn (prn-str playlist-items-transformed))
             (csv/write-csv-from-maps output-location-csv playlist-items-transformed)

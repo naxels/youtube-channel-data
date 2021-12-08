@@ -1,5 +1,6 @@
 (ns youtube-channel-data.utilities
-  (:require [clojure.data.json :as json]))
+  (:require [clojure.data.json :as json]
+            [clojure.string :as str]))
 
 ; JSON
 (defn json-value-reader
@@ -49,3 +50,10 @@
   "Turn to minutes, rounded up or down based on seconds left"
   [seconds]
   (Math/round (/ seconds 60.0)))
+
+(defn title-match-builder
+  [video-title-filter]
+  (fn [playlist-item] (-> playlist-item
+                          (get-in [:snippet :title] "")
+                          (str/lower-case)
+                          (str/includes? video-title-filter))))
