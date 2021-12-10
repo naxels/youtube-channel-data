@@ -2,19 +2,25 @@
   (:require [clojure.edn :as edn]
             [clojure.string :as str]))
 
-; Read API key from env or config.edn
-(def config (or (System/getenv "GOOGLE_API_KEY")
-                (-> "resources/config.edn"
-                    (slurp)
-                    (edn/read-string)
-                    (:API-Key))))
+; Read API key from env or config.edn, return nil if none found
+(def config (try
+              (or
+               (System/getenv "GOOGLE_API_KEY")
+               (-> "resources/config.edn"
+                   (slurp)
+                   (edn/read-string)
+                   (:API-Key)))
+              (catch java.io.FileNotFoundException _e
+                (println "No API key found"))))
 
-; Turn API key to map
-(def api-key {:key config})
+; Turn API key to map, using "" when nil found
+(def api-key {:key (or config
+                       "")})
 
 ; Define url paths
 (def base-url "https://www.googleapis.com")
 
+; Use v3
 (def sub-path "/youtube/v3/")
 
 ; Helpers
