@@ -1,7 +1,8 @@
 (ns youtube-channel-data.core
   (:gen-class)
-  (:require   [clojure.string :as str]
-              [clojure.java.io :as io]
+  (:require   [clojure.java.io :as io]
+              [clojure.string :as str]
+              [clojure.tools.cli :refer [parse-opts]]
               [csv-exporter.core :as csv]
               [youtube-channel-data.youtube-api :as yt]
               [youtube-channel-data.utilities :as u]))
@@ -110,56 +111,74 @@
     (map output-map playlist-items)))
 
 (defn pull-yt-channel-data
-  [id-or-url video-title-filter]
-  (println "Reading Youtube using API-Key:" yt/config)
+  [id-or-url options]
+  (let [filter-option (:filter options)
+        video-title-filter (if filter-option
+                             (str/lower-case filter-option)
+                             nil)]
+    (println "Reading Youtube using API-Key:" yt/config)
 
-  ; get video id from args
-  (let [video-id (u/parse-input id-or-url)]
-    (println "Video id found:" video-id)
+    ; get video id from args
+    (let [video-id (u/parse-input id-or-url)]
+      (println "Video id found:" video-id)
 
-    ; call video api with part=snippet and get channel id
-    (let [channel-id (video-id->channel-id video-id)]
-      (println "Channel Id:" channel-id)
+      ; call video api with part=snippet and get channel id
+      (let [channel-id (video-id->channel-id video-id)]
+        (println "Channel Id:" channel-id)
 
-      ; get playlist id from channel api & title from channel api
-      (let [playlist-id (channel-id->playlist-id channel-id)
-            channel-title (channel-id->title channel-id)
-            ; add filter to output filename if set
-            output-location (output-location (if video-title-filter
-                                               (str channel-title "-" video-title-filter)
-                                               channel-title))
-            ; output-location-edn (str output-location ".edn")
-            output-location-csv (str output-location ".csv")]
-        (println "Playlist Id:" playlist-id)
-        (println "Channel title:" channel-title)
+        ; get playlist id from channel api & title from channel api
+        (let [playlist-id (channel-id->playlist-id channel-id)
+              channel-title (channel-id->title channel-id)
+              ; add filter to output filename if set
+              output-location (output-location (if video-title-filter
+                                                 (str channel-title "-" video-title-filter)
+                                                 channel-title))
+              ; output-location-edn (str output-location ".edn")
+              output-location-csv (str output-location ".csv")]
+          (println "Playlist Id:" playlist-id)
+          (println "Channel title:" channel-title)
 
-        (println "Getting all playlist items.....")
-        ; get all playlistitems from playlistitems api
-        (let [playlist-items (playlist-id->playlist-items playlist-id)]
-          (println "Playlist items found:" (count playlist-items))
+          (println "Getting all playlist items.....")
+          ; get all playlistitems from playlistitems api
+          (let [playlist-items (playlist-id->playlist-items playlist-id)]
+            (println "Playlist items found:" (count playlist-items))
 
-          (when video-title-filter
-            (println "Filtering titles on:" video-title-filter))
+            (when video-title-filter
+              (println "Filtering titles on:" video-title-filter))
 
-          (println "Getting all videos for duration data.....")
-          ; filter the values on video-title-filter if truthy
-          (let [title-match? (u/title-match-builder video-title-filter)
-                playlist-items-transformed (cond->> playlist-items
-                                             video-title-filter (filter title-match?)
-                                             true (transform-playlist-items))]
-            ; (spit output-location-edn (prn-str playlist-items-transformed))
-            (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
-            (println "Data saved to" output-location-csv)))))))
+            (println "Getting all videos for duration data.....")
+            ; filter the values on video-title-filter if truthy
+            (let [title-match? (u/title-match-builder video-title-filter)
+                  playlist-items-transformed (cond->> playlist-items
+                                               video-title-filter (filter title-match?)
+                                               true (transform-playlist-items))]
+              ; (spit output-location-edn (prn-str playlist-items-transformed))
+              (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
+              (println "Data saved to" output-location-csv))))))))
+
+; CLI
+(defn usage [options-summary]
+  (->> ["Youtube channel data"
+        ""
+        "Usage: youtube-channel-data [options] video-id/url"
+        ""
+        "Options:"
+        options-summary
+        ""
+        "Video id/url:"
+        "Can be just the video id, full Youtube url or short Youtu.be url"]
+       (str/join \newline)))
+
+(def cli-options
+  [["-f" "--filter SEARCHQUERY" "Search query to filter the channel video's on"]
+   ["-o" "--output FORMAT" "Output formats supported: csv"
+    :default "csv"]])
 
 (defn -main
-  ([]
-   (println "No arguments found")
-   (println "Please enter a video id or YouTube video URL")
-   (println "As a second argument you can enter a word or quoted sentence to output only the searched for channel's video titles")
-   (System/exit 0))
-  ([id-or-url]
-   (pull-yt-channel-data id-or-url nil)
-   (println "All done, exiting"))
-  ([id-or-url video-title-filter]
-   (pull-yt-channel-data id-or-url (str/lower-case video-title-filter))
-   (println "All done, exiting")))
+  [& args]
+  (let [{:keys [options arguments _errors summary]} (parse-opts args cli-options)]
+    (if (empty? arguments)
+      (println (usage summary))
+      (do
+        (pull-yt-channel-data (first arguments) options)
+        (println "All done, exiting")))))
