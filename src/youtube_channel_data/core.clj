@@ -26,7 +26,7 @@
 (defn video-key
   "Turn video to vec of id, duration"
   [vid]
-  [(:id vid) (u/seconds->minutes (.toSeconds (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
+  [(:id vid) (u/seconds->minutes (.getSeconds (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
 
 (defn video-id->channel-id
   [video-id]
