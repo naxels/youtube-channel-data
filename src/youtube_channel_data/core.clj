@@ -111,9 +111,9 @@
     (map output-map playlist-items)))
 
 (defn pull-yt-channel-data
-  [id-or-url options]
-  (let [filter-option (:filter options)
-        video-title-filter (and filter-option
+  [id-or-url {filter-option :filter
+              _output :output}]
+  (let [video-title-filter (and filter-option
                                 (str/lower-case filter-option))]
     (println "Reading Youtube using API-Key:" yt/config)
 
