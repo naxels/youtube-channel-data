@@ -113,9 +113,8 @@
 (defn pull-yt-channel-data
   [id-or-url options]
   (let [filter-option (:filter options)
-        video-title-filter (if filter-option
-                             (str/lower-case filter-option)
-                             nil)]
+        video-title-filter (and filter-option
+                                (str/lower-case filter-option))]
     (println "Reading Youtube using API-Key:" yt/config)
 
     ; get video id from args
