@@ -1,9 +1,9 @@
 (ns youtube-channel-data.core
   (:gen-class)
-  (:require   [clojure.java.io :as io]
-              [clojure.string :as str]
+  (:require   [clojure.string :as str]
               [clojure.tools.cli :refer [parse-opts]]
               [csv-exporter.core :as csv]
+              [youtube-channel-data.output :as output]
               [youtube-channel-data.youtube-api :as yt]
               [youtube-channel-data.utilities :as u]))
 
@@ -66,13 +66,6 @@
        (consume-playlist-pages)
        (flatten)))
 
-(defn output-location
-  "Output to output folder if exists, else to current location"
-  [channel-title]
-  (if (.exists (io/file "output"))
-    (str "output" (java.io.File/separator) channel-title)
-    (str channel-title)))
-
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
 ; Has to be consumed sequentially since we need the nextPageToken from the result
 (defn consume-playlist-pages
@@ -112,7 +105,7 @@
 
 (defn pull-yt-channel-data
   [id-or-url {filter-option :filter
-              _output :output}]
+              output-format :output}]
   (let [video-title-filter (and filter-option
                                 (str/lower-case filter-option))]
     (println "Reading Youtube using API-Key:" yt/config)
@@ -129,11 +122,10 @@
         (let [playlist-id (channel-id->playlist-id channel-id)
               channel-title (channel-id->title channel-id)
               ; add filter to output filename if set
-              output-location (output-location (if video-title-filter
+              output-location (output/location (if video-title-filter
                                                  (str channel-title "-" video-title-filter)
                                                  channel-title))
-              ; output-location-edn (str output-location ".edn")
-              output-location-csv (str output-location ".csv")]
+              output-location-ext (output/extension output-location output-format)]
           (println "Playlist Id:" playlist-id)
           (println "Channel title:" channel-title)
 
@@ -152,8 +144,9 @@
                                                video-title-filter (filter title-match?)
                                                true (transform-playlist-items))]
               ; (spit output-location-edn (prn-str playlist-items-transformed))
-              (csv/write-csv-from-maps output-location-csv playlist-items-transformed)
-              (println "Data saved to" output-location-csv))))))))
+              ; (spit output-location-json (json/write-str playlist-items-transformed))
+              (csv/write-csv-from-maps output-location-ext playlist-items-transformed)
+              (println "Data saved to" output-location-ext))))))))
 
 ; CLI
 (defn usage [options-summary]
@@ -170,7 +163,7 @@
 
 (def cli-options
   [["-f" "--filter SEARCHQUERY" "Search query to filter the channel video's on"]
-   ["-o" "--output FORMAT" "Output formats supported: csv"
+   ["-o" "--output FORMAT" (format "Output formats supported: %s" (str/join ", " output/supported-formats))
     :default "csv"]])
 
 (defn -main
