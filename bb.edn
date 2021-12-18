@@ -1,0 +1,2 @@
+{:deps {local/deps {:local/root "."}}
+ :tasks {ycd youtube-channel-data.core/-main}}
