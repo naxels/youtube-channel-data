@@ -7,6 +7,8 @@
               [youtube-channel-data.youtube-api :as yt]
               [youtube-channel-data.utilities :as u]))
 
+(set! *warn-on-reflection* true)
+
 (declare consume-playlist-pages)
 
 ; Output map closure
@@ -26,7 +28,7 @@
 (defn video-key
   "Turn video to vec of id, duration"
   [vid]
-  [(:id vid) (u/seconds->minutes (.getSeconds (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
+  [(:id vid) (u/seconds->minutes (.getSeconds ^java.time.Duration (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
 
 (defn video-id->channel-id
   [video-id]

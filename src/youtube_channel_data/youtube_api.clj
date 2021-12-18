@@ -2,6 +2,8 @@
   (:require [clojure.edn :as edn]
             [clojure.string :as str]))
 
+(set! *warn-on-reflection* true)
+
 ; Read API key from env or config.edn, return nil if none found
 (def config (try
               (or
@@ -27,7 +29,7 @@
 ; from https://stackoverflow.com/a/9745663
 (defn query-params->query-string [m]
   (str/join "&"
-            (for [[k v] m]
+            (for [[k ^String v] m]
               (str (name k) "="  (java.net.URLEncoder/encode v "UTF-8")))))
 
 ; Main API string builder closure

@@ -2,6 +2,8 @@
   (:require [clojure.data.json :as json]
             [clojure.string :as str]))
 
+(set! *warn-on-reflection* true)
+
 ; JSON
 (defn json-value-reader
   [key value]
