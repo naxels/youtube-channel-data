@@ -11,19 +11,6 @@
 
 (declare consume-playlist-pages)
 
-; Output map closure
-(defn output-map-builder
-  "Turn playlist item to map, adding video-duration through lookup"
-  [video-durations-map]
-  (fn [{v :snippet}]
-    (let [video-id (get-in v [:resourceId :videoId])]
-      {:video-id    video-id
-       :video-url   (str "https://youtu.be/" video-id)
-       :title       (:title v)
-       :thumbnail   (get-in v [:thumbnails :default :url])
-       :uploaded-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt v)) ; in yyyy-MM-dd string
-       :duration    (video-durations-map video-id)}))) ; lookup duration from video-durations map
-
 ; Video key
 (defn video-key
   "Turn video to vec of id, duration"
@@ -101,7 +88,7 @@
         ; turn into lookup map
         ; {video-id, java Duration parsed}
         video-durations (into {} (map video-key videos-data))
-        output-map (output-map-builder video-durations)]
+        output-map (output/output-map-builder video-durations)]
     (shutdown-agents) ; close futures thread pool used by pmap
     (map output-map playlist-items)))
 
