@@ -124,6 +124,10 @@
                   playlist-items-transformed (cond->> playlist-items
                                                video-title-filter (filter title-match?)
                                                true (transform-playlist-items))]
+
+              (when video-title-filter
+                (println "Playlist items left after filtering:" (count playlist-items-transformed)))
+
               ; (spit output-location-edn (prn-str playlist-items-transformed))
               ; (spit output-location-json (json/write-str playlist-items-transformed))
               (csv/write-csv-from-maps output-location-ext playlist-items-transformed)
