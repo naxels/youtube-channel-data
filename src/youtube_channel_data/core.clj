@@ -27,32 +27,22 @@
        (:snippet)
        (:channelId)))
 
-(defn channel-id->playlist-id
+(defn channel-id->playlist-id+title
+  "Returns vec with [playlist-id, title]"
   [channel-id]
-  (->> (yt/channels {:part "contentDetails" :id channel-id})
+  (let [channel-item (->> (yt/channels {:part "contentDetails,brandingSettings" :id channel-id})
        (slurp)
        (u/channel->json)
        (:items)
-       (first)
-       (:contentDetails)
-       (:relatedPlaylists)
-       (:uploads)))
-
-(defn channel-id->title
-  [channel-id]
-  (->> (yt/channels {:part "brandingSettings" :id channel-id})
-       (slurp)
-       (u/channel->json)
-       (:items)
-       (first)
-       (:brandingSettings)
-       (:channel)
-       (:title)))
+               (first))]
+    [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
+     (get-in channel-item [:brandingSettings :channel :title])]))
 
 (defn playlist-id->playlist-items
   [playlist-id]
   (->> (yt/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})
        (consume-playlist-pages)
+       ; Note: (apply concat) is faster than using conj / into while consuming
        (apply concat)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
@@ -110,9 +100,8 @@
       (let [channel-id (video-id->channel-id video-id)]
         (println "Channel Id:" channel-id)
 
-        ; get playlist id from channel api & title from channel api
-        (let [playlist-id (channel-id->playlist-id channel-id)
-              channel-title (channel-id->title channel-id)
+        ; get playlist-id & title from channel api
+        (let [[playlist-id channel-title] (channel-id->playlist-id+title channel-id)
               ; add filter to output filename if set
               output-location (output/location (if video-title-filter
                                                  (str channel-title "-" video-title-filter)
