@@ -53,7 +53,7 @@
   [playlist-id]
   (->> (yt/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})
        (consume-playlist-pages)
-       (flatten)))
+       (apply concat)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
 ; Has to be consumed sequentially since we need the nextPageToken from the result
@@ -84,7 +84,7 @@
                          (partition-all 50) ; partition per 50 id's
                          (pmap
                           #(consume-video-lists (yt/videos {:part "contentDetails"}) %)) ; get all video data for id's
-                         (flatten))
+                         (apply concat))
         ; turn into lookup map
         ; {video-id, java Duration parsed}
         video-durations (into {} (map video-key videos-data))
