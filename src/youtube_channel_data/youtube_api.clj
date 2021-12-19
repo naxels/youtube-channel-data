@@ -1,6 +1,6 @@
 (ns youtube-channel-data.youtube-api
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]))
+            [youtube-channel-data.utilities :as u]))
 
 (set! *warn-on-reflection* true)
 
@@ -25,13 +25,6 @@
 ; Use v3
 (def sub-path "/youtube/v3/")
 
-; Helpers
-; from https://stackoverflow.com/a/9745663
-(defn query-params->query-string [m]
-  (str/join "&"
-            (for [[k ^String v] m]
-              (str (name k) "="  (java.net.URLEncoder/encode v "UTF-8")))))
-
 ; Main API string builder closure
 (defn api
   "Returns fn with route filled in.
@@ -39,7 +32,7 @@
   [route]
   (fn
     [query-params]
-    (let [query-string (query-params->query-string (conj query-params api-key))]
+    (let [query-string (u/query-params->query-string (conj query-params api-key))]
       (str base-url sub-path route "?" query-string))))
 
 ; Caller helper methods

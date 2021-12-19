@@ -48,6 +48,12 @@
       video-id
       cli-arg)))
 
+; from https://stackoverflow.com/a/9745663
+(defn query-params->query-string [m]
+  (str/join "&"
+            (for [[k ^String v] m]
+              (str (name k) "="  (java.net.URLEncoder/encode v "UTF-8")))))
+
 (defn seconds->minutes
   "Turn to minutes, rounded up or down based on seconds left"
   [seconds]

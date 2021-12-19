@@ -34,6 +34,13 @@
   (is (= "monkey" (u/parse-input "https://youtu.be/monkey")))
   (is (= "monkey" (u/parse-input "https://youtu.be/monkey?t=7"))))
 
+(deftest test-query-params->query-string
+  (is (= "" (u/query-params->query-string {})))
+  (is (= "a=" (u/query-params->query-string {:a ""})))
+  (is (= "a=b" (u/query-params->query-string {:a "b"})))
+  (is (= "a=b&c=d" (u/query-params->query-string {:a "b" :c "d"})))
+  (is (= "a=&c=d" (u/query-params->query-string {:a "" :c "d"}))))
+
 (deftest test-seconds->minutes
   (is (= 1 (u/seconds->minutes 61)))
   (is (= 1 (u/seconds->minutes 89)))

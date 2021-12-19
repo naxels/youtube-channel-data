@@ -12,13 +12,6 @@
 (deftest test-base-url)
 (deftest test-sub-path)
 
-(deftest test-query-params->query-string
-  (is (= "" (yt/query-params->query-string {})))
-  (is (= "a=" (yt/query-params->query-string {:a ""})))
-  (is (= "a=b" (yt/query-params->query-string {:a "b"})))
-  (is (= "a=b&c=d" (yt/query-params->query-string {:a "b" :c "d"})))
-  (is (= "a=&c=d" (yt/query-params->query-string {:a "" :c "d"}))))
-
 (deftest test-api
   (is (= true (fn? (yt/api "videos")))))
 
