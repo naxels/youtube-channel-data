@@ -59,22 +59,25 @@
 ; Has to be consumed sequentially since we need the nextPageToken from the result
 (defn consume-playlist-pages
   ([url]
-   (let [api-str (slurp url)
-         converted (u/playlist->json api-str)]
+   (let [converted (-> url
+                       (slurp)
+                       (u/playlist->json))]
      (consume-playlist-pages (conj [] (:items converted)) url (:nextPageToken converted))))
   ([items-coll base-url page-token]
    (if page-token
-     (let [api-str (slurp (str base-url "&pageToken=" page-token))
-           converted (u/playlist->json api-str)]
-       (recur (conj items-coll (:items converted)) base-url (:nextPageToken converted))) ; learned that the function call can be replaced with recur
+     (let [converted (-> (str base-url "&" (u/query-params->query-string {:pageToken page-token}))
+                         (slurp)
+                         (u/playlist->json))]
+       (recur (conj items-coll (:items converted)) base-url (:nextPageToken converted)))
      items-coll)))
 
 ; Get all videos for the id's
 (defn consume-video-lists
   [base-url ids]
-  (let [api-str (slurp (str base-url "&id=" (str/join "," ids)))
-        converted (u/video->json api-str)]
-    (:items converted)))
+  (-> (str base-url "&" (u/query-params->query-string {:id (str/join "," ids)}))
+      (slurp)
+      (u/video->json)
+      (:items)))
 
 (defn transform-playlist-items
   "Get duration from videos, parallelly grab and transform to output map"
