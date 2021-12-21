@@ -3,9 +3,9 @@
 ## Goal:
 Using the Youtube Data API, get all videos data from a channel through the channel's playlist and output certain data to `channel title` file, by only providing a single video-id/youtube video url from that channel.
 
-(To start, only CSV output is supported)
-
 The video-id / url is needed because the Youtube Data API often cannot find the channel through the channel API call.
+
+By default outputs to CSV
 
 ## Motivation:
 Needed to get a Youtube channel's video metadata in order to make a shared spreadsheet for quick reference / filter capabilities.
