@@ -52,9 +52,7 @@ Ensure you have Java (v1.8+) & Clojure installed: https://clojure.org/guides/get
 
 These scripts [require >v1.10.3.929](https://clojureverse.org/t/how-to-depend-on-tools-build/7916/2) to work with tools.build, so [update your Clojure tools](https://www.clojure.org/guides/getting_started) if necessary.  
 
-And finally either
-
-run with:
+Run with:
 
 `./run.sh [options] (video-id / youtube video url)` 
 
