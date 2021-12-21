@@ -85,53 +85,97 @@
     (shutdown-agents) ; close futures thread pool used by pmap
     (map output-map playlist-items)))
 
-(defn pull-yt-channel-data
-  [id-or-url {filter-option :filter
-              output-format :output}]
-  (let [video-title-filter (and filter-option
-                                (str/lower-case filter-option))]
-    (println "Reading Youtube using API-Key:" yt/config)
+(defn add-video-title-filter
+  [data]
+  (let [filter-option (get-in data [:options :filter])]
+    (assoc data :video-title-filter (and filter-option
+                                         (str/lower-case filter-option)))))
 
-    ; get video id from args
-    (let [video-id (u/parse-input id-or-url)]
-      (println "Video id found:" video-id)
+(defn add-video-id
+  [data]
+  (assoc data :video-id (u/parse-input (:id-or-url data))))
 
-      ; call video api with part=snippet and get channel id
-      (let [channel-id (video-id->channel-id video-id)]
-        (println "Channel Id:" channel-id)
+(defn add-channel-id
+  [data]
+  (assoc data :channel-id (video-id->channel-id (:video-id data))))
 
-        ; get playlist-id & title from channel api
-        (let [[playlist-id channel-title] (channel-id->playlist-id+title channel-id)
-              ; add filter to output filename if set
-              output-location (output/location (if video-title-filter
-                                                 (str channel-title "-" video-title-filter)
-                                                 channel-title))
-              output-location-ext (output/extension output-location output-format)]
-          (println "Playlist Id:" playlist-id)
-          (println "Channel title:" channel-title)
+(defn add-playlist-id+channel-title
+  [data]
+  (let [[playlist-id channel-title] (channel-id->playlist-id+title (:channel-id data))]
+    (assoc data
+           :playlist-id playlist-id
+           :channel-title channel-title)))
 
-          (println "Getting all playlist items.....")
-          ; get all playlistitems from playlistitems api
-          (let [playlist-items (playlist-id->playlist-items playlist-id)]
-            (println "Playlist items found:" (count playlist-items))
+(defn add-output-data
+  [data]
+  (assoc data
+         :output {:location (output/location)
+                  :filename (output/filename (:video-title-filter data) (:channel-title data))
+                  :separator \.
+                  :extension (output/extension (get-in data [:options :output]))}))
 
-            (when video-title-filter
-              (println "Filtering titles on:" video-title-filter))
+(defn add-playlist-items
+  [data]
+  (assoc data :playlist-items (playlist-id->playlist-items (:playlist-id data))))
 
-            (println "Getting all videos for duration data.....")
-            ; filter the values on video-title-filter if truthy
-            (let [title-match? (u/title-match-builder video-title-filter)
-                  playlist-items-transformed (cond->> playlist-items
+(defn add-transformed-playlist-items
+  [data]
+  (let [video-title-filter (:video-title-filter data)
+        title-match? (u/title-match-builder video-title-filter)]
+    (assoc data :playlist-items-transformed (cond->> (:playlist-items data)
                                                video-title-filter (filter title-match?)
-                                               true (transform-playlist-items))]
+                                              true (transform-playlist-items)))))
 
-              (when video-title-filter
-                (println "Playlist items left after filtering:" (count playlist-items-transformed)))
-
+(defn output-to-file
+  [data]
+  (let [output (:output data)
+        output-file (str (:location output)
+                         (:filename output)
+                         (:separator output)
+                         (:extension output))]
               ; (spit output-location-edn (prn-str playlist-items-transformed))
               ; (spit output-location-json (json/write-str playlist-items-transformed))
-              (csv/write-csv-from-maps output-location-ext playlist-items-transformed)
-              (println "Data saved to" output-location-ext))))))))
+    (condp = (:extension output)
+      "csv" (csv/write-csv-from-maps output-file (:playlist-items-transformed data))))
+  data)
+
+(defn notify
+  "2 arity: print and return data
+   3 arity: print after applying f to data"
+  ([data msg]
+   (println msg)
+   data)
+  ([data msg f]
+   (notify data (str msg " " (f data)))))
+
+(defn notify-if
+  [data msg f conditionalf]
+  (if (conditionalf data)
+    (notify data msg f)
+    data))
+
+(defn pull-yt-channel-data
+  [data]
+  (println "Reading Youtube using API-Key:" yt/config)
+  (-> data
+      (add-video-title-filter)
+      (add-video-id)
+      (notify "Video id found:" :video-id)
+      (notify-if "Filtering titles on:" :video-title-filter :video-title-filter)
+      (add-channel-id)
+      (notify "Channel Id:" :channel-id)
+      (add-playlist-id+channel-title)
+      (notify "Playlist Id:" :playlist-id)
+      (notify "Channel title:" :channel-title)
+      (add-output-data)
+      (notify "Getting all playlist items.....")
+      (add-playlist-items)
+      (notify "Playlist items found:" #(count (:playlist-items %)))
+      (notify "Getting all videos for duration data.....")
+      (add-transformed-playlist-items)
+      (notify-if "Playlist items left after filtering:" #(count (:playlist-items-transformed %)) :video-title-filter)
+      (output-to-file)
+      (notify "Data saved to:" #(apply str (vals (:output %))))))
 
 ; CLI
 (defn usage [options-summary]
@@ -157,5 +201,5 @@
     (if (empty? arguments)
       (println (usage summary))
       (do
-        (pull-yt-channel-data (first arguments) options)
+        (pull-yt-channel-data {:id-or-url (first arguments) :options options})
         (println "All done, exiting")))))

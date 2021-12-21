@@ -7,16 +7,22 @@
 
 (defn location
   "Output to output folder if exists, else to current location"
-  [channel-title]
+  []
   (if (.exists (io/file "output"))
-    (str "output" (java.io.File/separator) channel-title)
-    (str channel-title)))
+    (str "output" (java.io.File/separator))
+    (str "")))
+
+(defn filename
+  [video-title-filter channel-title]
+  (if video-title-filter
+    (str channel-title "-" video-title-filter)
+    channel-title))
 
 (defn extension
-  [output-location output-format]
-  (str output-location "." (condp = output-format
-                             "csv" "csv"
-                             "csv")))
+  [output-format]
+  (condp = output-format
+    "csv" "csv"
+    "csv"))
 
 ; Output map closure
 (defn output-map-builder
