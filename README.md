@@ -50,6 +50,8 @@ _(Windows users: replace .sh with .bat)_
 
 Ensure you have Java (v1.8+) & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
+These scripts [require >v1.10.3.929](https://clojureverse.org/t/how-to-depend-on-tools-build/7916/2) to work with tools.build, so [update your Clojure tools](https://www.clojure.org/guides/getting_started) if necessary.  
+
 And finally either
 
 run with:
