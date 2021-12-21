@@ -18,6 +18,9 @@ https://console.cloud.google.com/home/dashboard
 
 Setting the API key, either:
 - Set the GOOGLE_API_KEY environment variable to the API key from Google.
+  - Bash, at execution: `env GOOGLE_API_KEY=[your-api-key] ./run.sh [video-id]`
+  - Powershell, at execution: Run `$env:GOOGLE_API_KEY = [your-api-key]` before ./run.sh
+  - Powershell, persistent: `[Environment]::SetEnvironmentVariable("GOOGLE_API_KEY", "[your-api-key]", "User")`
 - Clone the repo or download the `resources/config.edn` file from the repo and replace the :API-Key value in `resources/config.edn` with the API key from Google.
 
 ### Using the JAR:
@@ -43,13 +46,13 @@ The resulting file will be stored in the output folder (if exists) or current fo
 
 ## Development:
 
-*This tool uses Bash scripts which requires a Linux/Unix distro. If you're on Windows, follow the below steps in WSL.*
+_(Windows users: replace .sh with .bat)_
 
 Ensure you have Java (v1.8+) & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
-And finally either
+These scripts [require >v1.10.3.929](https://clojureverse.org/t/how-to-depend-on-tools-build/7916/2) to work with tools.build, so [update your Clojure tools](https://www.clojure.org/guides/getting_started) if necessary.  
 
-run with:
+Run with:
 
 `./run.sh [options] (video-id / youtube video url)` 
 

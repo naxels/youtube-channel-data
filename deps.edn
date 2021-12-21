@@ -3,7 +3,7 @@
         org.clojure/data.json {:mvn/version "2.4.0"}
         org.clojure/tools.cli {:mvn/version "1.0.206"}
         org.clojars.crowbrammer/csv-exporter {:mvn/version "0.1.0"}}
- :aliases {:build {:deps {io.github.clojure/tools.build {:git/tag "v0.6.2" :git/sha "226fb52"}}
+ :aliases {:build {:extra-deps {io.github.clojure/tools.build {:git/tag "v0.6.2" :git/sha "226fb52"}}
                    :ns-default build}
            :test {:extra-paths ["test"]
                   :extra-deps {io.github.cognitect-labs/test-runner
