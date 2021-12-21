@@ -134,9 +134,9 @@
                          (:separator output)
                          (:extension output))]
               ; (spit output-location-edn (prn-str playlist-items-transformed))
-              ; (spit output-location-json (json/write-str playlist-items-transformed))
     (condp = (:extension output)
-      "csv" (csv/write-csv-from-maps output-file (:playlist-items-transformed data))))
+      "csv" (csv/write-csv-from-maps output-file (:playlist-items-transformed data))
+      "json" (spit output-file (u/data->json (:playlist-items-transformed data)))))
   data)
 
 (defn notify

@@ -22,6 +22,7 @@
   [output-format]
   (condp = output-format
     "csv" "csv"
+    "json" "json"
     "csv"))
 
 ; Output map closure
