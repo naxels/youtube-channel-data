@@ -20,7 +20,7 @@ Setting the API key, either:
 - Set the GOOGLE_API_KEY environment variable to the API key from Google.
   - Bash, at execution: `env GOOGLE_API_KEY=[your-api-key] ./run.sh [video-id]`
   - Powershell, at execution: Run `$env:GOOGLE_API_KEY = [your-api-key]` before ./run.sh
-  - Powershell, peristent: `[Environment]::SetEnvironmentVariable("GOOGLE_API_KEY", "[your-api-key]", "User")`
+  - Powershell, persistent: `[Environment]::SetEnvironmentVariable("GOOGLE_API_KEY", "[your-api-key]", "User")`
 - Clone the repo or download the `resources/config.edn` file from the repo and replace the :API-Key value in `resources/config.edn` with the API key from Google.
 
 ### Using the JAR:
@@ -46,7 +46,7 @@ The resulting file will be stored in the output folder (if exists) or current fo
 
 ## Development:
 
-(Windows users: replace .sh with .bat)
+_(Windows users: replace .sh with .bat)_
 
 Ensure you have Java (v1.8+) & Clojure installed: https://clojure.org/guides/getting_started#_clojure_installer_and_cli_tools
 
