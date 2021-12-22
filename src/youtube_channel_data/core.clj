@@ -86,55 +86,52 @@
     (map output-map playlist-items)))
 
 (defn add-video-title-filter
-  [data]
-  (let [filter-option (get-in data [:options :filter])]
-    (assoc data :video-title-filter (and filter-option
-                                         (str/lower-case filter-option)))))
+  [{{filter-option :filter} :options :as data}]
+  (assoc data :video-title-filter (and filter-option
+                                       (str/lower-case filter-option))))
 
 (defn add-video-id
-  [data]
-  (assoc data :video-id (u/parse-input (:id-or-url data))))
+  [{:keys [id-or-url] :as data}]
+  (assoc data :video-id (u/parse-input id-or-url)))
 
 (defn add-channel-id
-  [data]
-  (assoc data :channel-id (video-id->channel-id (:video-id data))))
+  [{:keys [video-id] :as data}]
+  (assoc data :channel-id (video-id->channel-id video-id)))
 
 (defn add-playlist-id+channel-title
-  [data]
-  (let [[playlist-id channel-title] (channel-id->playlist-id+title (:channel-id data))]
+  [{:keys [channel-id] :as data}]
+  (let [[playlist-id channel-title] (channel-id->playlist-id+title channel-id)]
     (assoc data
            :playlist-id playlist-id
            :channel-title channel-title)))
 
 (defn add-output-data
-  [data]
+  [{:keys [video-title-filter channel-title] :as data}]
   (let [output-map {:location (output/location)
-                    :filename (output/filename (:video-title-filter data) (:channel-title data))
+                    :filename (output/filename video-title-filter channel-title)
                     :separator \.
                     :extension (output/extension (get-in data [:options :output]))}
         output (assoc output-map :file (apply str (vals output-map)))]
     (assoc data :output output)))
 
 (defn add-playlist-items
-  [data]
-  (assoc data :playlist-items (playlist-id->playlist-items (:playlist-id data))))
+  [{:keys [playlist-id] :as data}]
+  (assoc data :playlist-items (playlist-id->playlist-items playlist-id)))
 
 (defn add-transformed-playlist-items
-  [data]
-  (let [video-title-filter (:video-title-filter data)
-        title-match? (u/title-match-builder video-title-filter)]
-    (assoc data :playlist-items-transformed (cond->> (:playlist-items data)
+  [{:keys [video-title-filter playlist-items] :as data}]
+  (let [title-match? (u/title-match-builder video-title-filter)]
+    (assoc data :playlist-items-transformed (cond->> playlist-items
                                                video-title-filter (filter title-match?)
                                               true (transform-playlist-items)))))
 
 (defn output-to-file
-  [data]
-  (let [output (:output data)
-        output-file (:file output)]
+  [{:keys [output playlist-items-transformed] :as data}]
+  (let [{:keys [file extension]} output]
       ; (spit output-location-edn (prn-str playlist-items-transformed))
-    (condp = (:extension output)
-      "csv" (csv/write-csv-from-maps output-file (:playlist-items-transformed data))
-      "json" (spit output-file (u/data->json (:playlist-items-transformed data)))))
+    (condp = extension
+      "csv" (csv/write-csv-from-maps file playlist-items-transformed)
+      "json" (spit file (u/data->json playlist-items-transformed))))
   data)
 
 (defn notify
