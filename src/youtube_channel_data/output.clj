@@ -3,7 +3,7 @@
 
 (set! *warn-on-reflection* true)
 
-(def supported-formats ["csv"])
+(def supported-formats ["csv", "json"])
 
 (defn location
   "Output to output folder if exists, else to current location"
@@ -19,11 +19,10 @@
     channel-title))
 
 (defn extension
+  "Lookup the output option or return csv as default"
   [output-format]
-  (condp = output-format
-    "csv" "csv"
-    "json" "json"
-    "csv"))
+  (or (some #{output-format} supported-formats)
+      "csv"))
 
 ; Output map closure
 (defn output-map-builder
