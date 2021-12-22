@@ -108,11 +108,12 @@
 
 (defn add-output-data
   [data]
-  (assoc data
-         :output {:location (output/location)
-                  :filename (output/filename (:video-title-filter data) (:channel-title data))
-                  :separator \.
-                  :extension (output/extension (get-in data [:options :output]))}))
+  (let [output-map {:location (output/location)
+                    :filename (output/filename (:video-title-filter data) (:channel-title data))
+                    :separator \.
+                    :extension (output/extension (get-in data [:options :output]))}
+        output (assoc output-map :file (apply str (vals output-map)))]
+    (assoc data :output output)))
 
 (defn add-playlist-items
   [data]
@@ -129,11 +130,8 @@
 (defn output-to-file
   [data]
   (let [output (:output data)
-        output-file (str (:location output)
-                         (:filename output)
-                         (:separator output)
-                         (:extension output))]
-              ; (spit output-location-edn (prn-str playlist-items-transformed))
+        output-file (:file output)]
+      ; (spit output-location-edn (prn-str playlist-items-transformed))
     (condp = (:extension output)
       "csv" (csv/write-csv-from-maps output-file (:playlist-items-transformed data))
       "json" (spit output-file (u/data->json (:playlist-items-transformed data)))))
@@ -175,7 +173,7 @@
       (add-transformed-playlist-items)
       (notify-if "Playlist items left after filtering:" #(count (:playlist-items-transformed %)) :video-title-filter)
       (output-to-file)
-      (notify "Data saved to:" #(apply str (vals (:output %))))))
+      (notify "Data saved to:" #(get-in % [:output :file]))))
 
 ; CLI
 (defn usage [options-summary]
