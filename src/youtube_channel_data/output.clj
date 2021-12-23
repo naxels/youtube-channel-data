@@ -5,7 +5,7 @@
 
 (set! *warn-on-reflection* true)
 
-(def supported-formats ["csv", "json"])
+(def supported-formats ["csv", "edn", "json"])
 
 (defn location
   "Output to output folder if exists, else to current location"
@@ -30,6 +30,9 @@
   [file extension to-write]
   (condp = extension
     "csv" (csv/write-csv-from-maps file to-write)
+    ; edn: need to print to string first
+    "edn" (with-open [writer (io/writer file)]
+            (.write writer (pr-str to-write)))
     "json" (with-open [writer (io/writer file)]
              (json/write to-write writer))))
 
