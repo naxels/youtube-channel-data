@@ -31,10 +31,6 @@
 
 (def video->json (str->json json-video-value-reader))
 
-(defn data->json
-  [data]
-  (json/write-str data))
-
 ; Others
 (defn parse-input
   "Use RegEx to try to get the video-id from the input or return input"

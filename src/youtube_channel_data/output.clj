@@ -1,5 +1,7 @@
 (ns youtube-channel-data.output
-  (:require   [clojure.java.io :as io]))
+  (:require [clojure.data.json :as json]
+            [clojure.java.io :as io]
+            [csv-exporter.core :as csv]))
 
 (set! *warn-on-reflection* true)
 
@@ -23,6 +25,13 @@
   [output-format]
   (or (some #{output-format} supported-formats)
       "csv"))
+
+(defn writer
+  [file extension to-write]
+  (condp = extension
+    "csv" (csv/write-csv-from-maps file to-write)
+    "json" (with-open [writer (io/writer file)]
+             (json/write to-write writer))))
 
 ; Output map closure
 (defn output-map-builder

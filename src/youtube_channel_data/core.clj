@@ -2,7 +2,6 @@
   (:gen-class)
   (:require   [clojure.string :as str]
               [clojure.tools.cli :refer [parse-opts]]
-              [csv-exporter.core :as csv]
               [youtube-channel-data.output :as output]
               [youtube-channel-data.youtube-api :as yt]
               [youtube-channel-data.utilities :as u]))
@@ -128,10 +127,7 @@
 (defn output-to-file
   [{:keys [output playlist-items-transformed] :as data}]
   (let [{:keys [file extension]} output]
-      ; (spit output-location-edn (prn-str playlist-items-transformed))
-    (condp = extension
-      "csv" (csv/write-csv-from-maps file playlist-items-transformed)
-      "json" (spit file (u/data->json playlist-items-transformed))))
+    (output/writer file extension playlist-items-transformed))
   data)
 
 (defn notify

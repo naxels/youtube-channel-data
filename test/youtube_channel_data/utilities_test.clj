@@ -26,10 +26,6 @@
 (deftest test-playlist->json)
 (deftest test-video->json)
 
-(deftest test-map->json
-  (is (= "{\"a\":\"b\"}" (u/data->json {:a "b"})))
-  (is (= "[{\"b\":\"c\"},{\"c\":\"d\"}]" (u/data->json [{:b "c"} {:c "d"}]))))
-
 (deftest test-parse-input
   ; using fake video id "monkey"
   (is (= "monkey" (u/parse-input "monkey")))
