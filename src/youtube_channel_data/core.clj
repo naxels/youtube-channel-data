@@ -9,6 +9,7 @@
 (set! *warn-on-reflection* true)
 
 (declare consume-playlist-pages)
+(declare consume-video-lists)
 
 ; Video key
 (defn video-key
@@ -42,6 +43,15 @@
   (->> (yt/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})
        (consume-playlist-pages)
        ; Note: (apply concat) is faster than using conj / into while consuming
+       (apply concat)))
+
+(defn playlist-items->videos
+  [playlist-items]
+  (->> playlist-items
+       (map (comp :videoId :resourceId :snippet))
+       (partition-all 50) ; partition per 50 id's
+       (pmap
+        #(consume-video-lists (yt/videos {:part "contentDetails"}) %)) ; get all video data for id's
        (apply concat)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
@@ -81,7 +91,6 @@
         ; {video-id, java Duration parsed}
         video-durations (into {} (map video-key videos-data))
         output-map (output/output-map-builder video-durations)]
-    (shutdown-agents) ; close futures thread pool used by pmap
     (map output-map playlist-items)))
 
 (defn add-video-title-filter
@@ -114,15 +123,18 @@
     (assoc data :output output)))
 
 (defn add-playlist-items
-  [{:keys [playlist-id] :as data}]
-  (assoc data :playlist-items (playlist-id->playlist-items playlist-id)))
+  [{:keys [video-title-filter playlist-id] :as data}]
+  (let [title-match? (u/title-match-builder video-title-filter)]
+    (assoc data :playlist-items (cond->> (playlist-id->playlist-items playlist-id)
+                                  video-title-filter (filter title-match?)))))
+
+(defn add-videos-data
+  [{:keys [playlist-items] :as data}]
+  (assoc data :videos (u/associate-by :id (playlist-items->videos playlist-items))))
 
 (defn add-transformed-playlist-items
-  [{:keys [video-title-filter playlist-items] :as data}]
-  (let [title-match? (u/title-match-builder video-title-filter)]
-    (assoc data :playlist-items-transformed (cond->> playlist-items
-                                               video-title-filter (filter title-match?)
-                                              true (transform-playlist-items)))))
+  [{:keys [playlist-items] :as data}]
+  (assoc data :playlist-items-transformed (transform-playlist-items playlist-items)))
 
 (defn output-to-file
   [{:keys [output playlist-items-transformed] :as data}]
@@ -163,6 +175,7 @@
       (add-playlist-items)
       (notify "Playlist items found:" #(count (:playlist-items %)))
       (notify "Getting all videos for duration data.....")
+      (add-videos-data)
       (add-transformed-playlist-items)
       (notify-if "Playlist items left after filtering:" #(count (:playlist-items-transformed %)) :video-title-filter)
       (output-to-file)
@@ -193,4 +206,5 @@
       (println (usage summary))
       (do
         (pull-yt-channel-data {:id-or-url (first arguments) :options options})
+        (shutdown-agents) ; close futures thread pool used by pmap
         (println "All done, exiting")))))

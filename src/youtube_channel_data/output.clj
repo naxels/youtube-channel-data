@@ -42,9 +42,14 @@
   [video-durations-map]
   (fn [{v :snippet}]
     (let [video-id (get-in v [:resourceId :videoId])]
-      {:video-id    video-id
+      {; Playlist-item
+       :video-id    video-id
        :video-url   (str "https://youtu.be/" video-id)
+       ; Playlist-item
        :title       (:title v)
+       ; Playlist-item
        :thumbnail   (get-in v [:thumbnails :default :url])
-       :uploaded-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt v)) ; in yyyy-MM-dd string
+       ; Playlist-item
+       :uploaded-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt v))
+       ; Video
        :duration    (video-durations-map video-id)}))) ; lookup duration from video-durations map
