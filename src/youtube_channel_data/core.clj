@@ -46,6 +46,7 @@
        (apply concat)))
 
 (defn playlist-items->videos
+  "Parallel grab of videos"
   [playlist-items]
   (->> playlist-items
        (map (comp :videoId :resourceId :snippet))
@@ -79,17 +80,11 @@
       (:items)))
 
 (defn transform-playlist-items
-  "Get duration from videos, parallelly grab and transform to output map"
-  [playlist-items]
-  (let [videos-data (->> playlist-items
-                         (map (comp :videoId :resourceId :snippet))
-                         (partition-all 50) ; partition per 50 id's
-                         (pmap
-                          #(consume-video-lists (yt/videos {:part "contentDetails"}) %)) ; get all video data for id's
-                         (apply concat))
-        ; turn into lookup map
+  "Transform playlist-items to output map"
+  [playlist-items videos]
+  (let [; turn videos into lookup map
         ; {video-id, java Duration parsed}
-        video-durations (into {} (map video-key videos-data))
+        video-durations (into {} (map video-key (vals videos)))
         output-map (output/output-map-builder video-durations)]
     (map output-map playlist-items)))
 
@@ -133,8 +128,8 @@
   (assoc data :videos (u/associate-by :id (playlist-items->videos playlist-items))))
 
 (defn add-transformed-playlist-items
-  [{:keys [playlist-items] :as data}]
-  (assoc data :playlist-items-transformed (transform-playlist-items playlist-items)))
+  [{:keys [playlist-items videos] :as data}]
+  (assoc data :playlist-items-transformed (transform-playlist-items playlist-items videos)))
 
 (defn output-to-file
   [{:keys [output playlist-items-transformed] :as data}]
