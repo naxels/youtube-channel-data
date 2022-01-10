@@ -62,3 +62,18 @@
                           (get-in [:snippet :title] "")
                           (str/lower-case)
                           (str/includes? video-title-filter))))
+
+(defn notify
+  "2 arity: print and return data
+   3 arity: print after applying f to data"
+  ([data msg]
+   (println msg)
+   data)
+  ([data msg f]
+   (notify data (str msg " " (f data)))))
+
+(defn notify-if
+  [data msg f conditionalf]
+  (if (conditionalf data)
+    (notify data msg f)
+    data))

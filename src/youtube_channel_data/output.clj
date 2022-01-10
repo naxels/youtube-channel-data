@@ -63,3 +63,8 @@
      :duration
      (->> :duration ^java.time.Duration (vid-cd) (.getSeconds) (u/seconds->minutes))}))
 
+(defn to-file
+  [{:keys [output playlist-items-transformed] :as data}]
+  (let [{:keys [file extension]} output]
+    (writer file extension playlist-items-transformed))
+  data)
