@@ -60,4 +60,6 @@
      ; Video
      :published-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt vid-s))
      ; Video
-     :duration     (u/seconds->minutes (.getSeconds ^java.time.Duration (:duration vid-cd)))}))
+     :duration
+     (->> :duration ^java.time.Duration (vid-cd) (.getSeconds) (u/seconds->minutes))}))
+

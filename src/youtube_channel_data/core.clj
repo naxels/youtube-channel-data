@@ -13,7 +13,8 @@
 
 (defn video-id->channel-id
   [video-id]
-  (->> (yt/videos {:part "snippet" :id video-id})
+  (->> {:part "snippet" :id video-id}
+       (yt/videos)
        (slurp)
        (u/video->json)
        (:items)
@@ -35,7 +36,8 @@
 (defn playlist-id->playlist-items
   "NOTE: API returns the playlist items based on position in the playlist"
   [playlist-id]
-  (->> (yt/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})
+  (->> {:part "snippet" :maxResults "50" :playlistId playlist-id}
+       (yt/playlist-items)
        (consume-playlist-pages)
        ; Note: (apply concat) is faster than using conj / into while consuming
        (apply concat)))
