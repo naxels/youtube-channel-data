@@ -11,12 +11,6 @@
 (declare consume-playlist-pages)
 (declare consume-video-lists)
 
-; Video key
-(defn video-key
-  "Turn video to vec of id, duration"
-  [vid]
-  [(:id vid) (u/seconds->minutes (.getSeconds ^java.time.Duration (get-in vid [:contentDetails :duration])))]) ; in minutes, rounded
-
 (defn video-id->channel-id
   [video-id]
   (->> (yt/videos {:part "snippet" :id video-id})
@@ -39,6 +33,7 @@
      (get-in channel-item [:brandingSettings :channel :title])]))
 
 (defn playlist-id->playlist-items
+  "NOTE: API returns the playlist items based on position in the playlist"
   [playlist-id]
   (->> (yt/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})
        (consume-playlist-pages)
@@ -46,13 +41,14 @@
        (apply concat)))
 
 (defn playlist-items->videos
-  "Parallel grab of videos"
+  "Parallel grab of videos
+   NOTE: API returns the videos based on the order of the id's"
   [playlist-items]
   (->> playlist-items
        (map (comp :videoId :resourceId :snippet))
        (partition-all 50) ; partition per 50 id's
        (pmap
-        #(consume-video-lists (yt/videos {:part "contentDetails"}) %)) ; get all video data for id's
+        #(consume-video-lists (yt/videos {:part "contentDetails,snippet"}) %)) ; get all video data for id's
        (apply concat)))
 
 ; Get all playlists by using all :nextPageToken until no more to fetch all json's
@@ -80,13 +76,10 @@
       (:items)))
 
 (defn transform-playlist-items
-  "Transform playlist-items to output map"
+  "Transform playlist-items & videos to output map"
   [playlist-items videos]
-  (let [; turn videos into lookup map
-        ; {video-id, java Duration parsed}
-        video-durations (into {} (map video-key (vals videos)))
-        output-map (output/output-map-builder video-durations)]
-    (map output-map playlist-items)))
+  (map output/output-map playlist-items videos)
+  )
 
 (defn add-video-title-filter
   [{{filter-option :filter} :options :as data}]
@@ -125,7 +118,7 @@
 
 (defn add-videos-data
   [{:keys [playlist-items] :as data}]
-  (assoc data :videos (u/associate-by :id (playlist-items->videos playlist-items))))
+  (assoc data :videos (playlist-items->videos playlist-items)))
 
 (defn add-transformed-playlist-items
   [{:keys [playlist-items videos] :as data}]

@@ -1,6 +1,7 @@
 (ns youtube-channel-data.output
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]
+            [youtube-channel-data.utilities :as u]
             [csv-exporter.core :as csv]))
 
 (set! *warn-on-reflection* true)
@@ -36,20 +37,27 @@
     "json" (with-open [writer (io/writer file)]
              (json/write to-write writer))))
 
-; Output map closure
-(defn output-map-builder
-  "Turn playlist item to map, adding video-duration through lookup"
-  [video-durations-map]
-  (fn [{v :snippet}]
-    (let [video-id (get-in v [:resourceId :videoId])]
-      {; Playlist-item
-       :video-id    video-id
-       :video-url   (str "https://youtu.be/" video-id)
-       ; Playlist-item
-       :title       (:title v)
-       ; Playlist-item
-       :thumbnail   (get-in v [:thumbnails :default :url])
-       ; Playlist-item
-       :uploaded-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt v))
-       ; Video
-       :duration    (video-durations-map video-id)}))) ; lookup duration from video-durations map
+;; ; Output map closure
+;; (defn output-map-builder
+;;   [video-durations-map]
+;;   (fn [{v :snippet}]
+;;     (let [video-id (get-in v [:resourceId :videoId])]
+;;       {})))
+
+; Output map
+(defn output-map
+  [{playlist-item :snippet} {vid-cd :contentDetails vid-s :snippet}]
+  (let [video-id (get-in playlist-item [:resourceId :videoId])]
+    {; Playlist-item
+     :video-id     video-id
+     :video-url    (str "https://youtu.be/" video-id)
+     ; Playlist-item
+     :title        (:title playlist-item)
+     ; Playlist-item
+     :thumbnail    (get-in playlist-item [:thumbnails :default :url])
+     ; Playlist-item
+     :uploaded-at  (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt playlist-item))
+     ; Video
+     :published-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt vid-s))
+     ; Video
+     :duration     (u/seconds->minutes (.getSeconds ^java.time.Duration (:duration vid-cd)))}))

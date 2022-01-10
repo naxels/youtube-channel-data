@@ -7,15 +7,10 @@
 ; JSON
 (defn json-value-reader
   [key value]
-  (if (= key :publishedAt)
-    (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
-    value))
-
-(defn json-video-value-reader
-  [key value]
-  (if (= key :duration)
-    (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
-    value))
+  (cond
+    (= key :duration) (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
+    (= key :publishedAt) (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
+    :else value))
 
 (defn str->json
   [value-fn-func]
@@ -29,7 +24,7 @@
 
 (def playlist->json (str->json json-value-reader))
 
-(def video->json (str->json json-video-value-reader))
+(def video->json (str->json json-value-reader))
 
 ; Others
 (defn parse-input
@@ -59,7 +54,9 @@
   [seconds]
   (Math/round (/ seconds 60.0)))
 
+; Closure
 (defn title-match-builder
+  "Returns fn"
   [video-title-filter]
   (fn [playlist-item] (-> playlist-item
                           (get-in [:snippet :title] "")

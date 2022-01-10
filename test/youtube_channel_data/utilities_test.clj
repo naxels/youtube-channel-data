@@ -7,11 +7,8 @@
   (let [zoned-date-time-val (u/json-value-reader :publishedAt "2021-11-22T14:34:20Z")]
     (is (= 2021 (.getYear zoned-date-time-val)))
     (is (= 11 (.getMonthValue zoned-date-time-val)))
-    (is (= 22 (.getDayOfMonth zoned-date-time-val)))))
-
-(deftest test-json-video-value-reader
-  (is (= :testval (u/json-video-value-reader :test :testval)))
-  (let [duration-val (u/json-video-value-reader :duration "PT1H51M36S")]
+    (is (= 22 (.getDayOfMonth zoned-date-time-val))))
+  (let [duration-val (u/json-value-reader :duration "PT1H51M36S")]
     (is (= 6696 (.getSeconds duration-val)))
     ; Since JDK 9
     (is (= 6696 (.toSeconds duration-val)))))
