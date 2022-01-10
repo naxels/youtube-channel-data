@@ -62,16 +62,3 @@
                           (get-in [:snippet :title] "")
                           (str/lower-case)
                           (str/includes? video-title-filter))))
-
-(defn associate-by
-  "Adapted from group-by:
-   Returns a map of the elements of coll keyed by the result of
-   f on each element. The value at each key is the corresponding
-   element"
-  [f coll]
-  (persistent!
-   (reduce
-    (fn [acc x]
-      (assoc! acc (f x) x))
-    (transient {})
-    coll)))

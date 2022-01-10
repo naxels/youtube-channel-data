@@ -47,8 +47,3 @@
   (let [title-match? (u/title-match-builder "monkey")]
     (is (= true (title-match? {:snippet {:title "MoNkEy island"}})))
     (is (= false (title-match? {:snippet {:title "Human island"}})))))
-
-(deftest test-associate-by
-  ; took the group-by Clojure test and adapted, because associate-by will only keep latest value
-  (is (= (u/associate-by even? [1 2 3 4 5])
-         {false 5, true 4})))
