@@ -29,7 +29,7 @@
 
 (defn writer
   [file extension to-write]
-  (condp = extension
+  (case extension
     "csv" (csv/write-csv-from-maps file to-write)
     ; edn: need to print to string first
     "edn" (with-open [writer (io/writer file)]

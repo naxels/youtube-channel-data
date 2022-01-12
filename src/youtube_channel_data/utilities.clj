@@ -7,10 +7,10 @@
 ; JSON
 (defn json-value-reader
   [key value]
-  (cond
-    (= key :duration) (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
-    (= key :publishedAt) (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
-    :else value))
+  (case key
+    :duration (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
+    :publishedAt (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
+    value))
 
 (defn str->json
   [value-fn-func]
@@ -62,3 +62,11 @@
                           (get-in [:snippet :title] "")
                           (str/lower-case)
                           (str/includes? video-title-filter))))
+
+; Partial
+(defn title-match?
+  [video-title-filter playlist-item]
+  (-> playlist-item
+      (get-in [:snippet :title] "")
+      (str/lower-case)
+      (str/includes? video-title-filter)))
