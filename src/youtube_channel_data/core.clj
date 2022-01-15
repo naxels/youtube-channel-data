@@ -4,7 +4,7 @@
               [clojure.tools.cli :refer [parse-opts]]
               [youtube-channel-data.output :as output]
               [youtube-channel-data.youtube-api :as yt]
-              [youtube-channel-data.utilities :as u]))
+              [youtube-channel-data.utils :as u]))
 
 (set! *warn-on-reflection* true)
 

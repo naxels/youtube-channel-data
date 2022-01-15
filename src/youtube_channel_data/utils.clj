@@ -1,6 +1,8 @@
-(ns youtube-channel-data.utilities
+(ns youtube-channel-data.utils
   (:require [clojure.data.json :as json]
-            [clojure.string :as str]))
+            [clojure.string :as str])
+  (:import [java.time Duration ZonedDateTime]
+           [java.net URLEncoder]))
 
 (set! *warn-on-reflection* true)
 
@@ -8,8 +10,8 @@
 (defn json-value-reader
   [key value]
   (case key
-    :duration (java.time.Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
-    :publishedAt (java.time.ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
+    :duration (Duration/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html
+    :publishedAt (ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
     value))
 
 (defn str->json
@@ -47,7 +49,7 @@
 (defn query-params->query-string [m]
   (str/join "&"
             (for [[k ^String v] m]
-              (str (name k) "="  (java.net.URLEncoder/encode v "UTF-8")))))
+              (str (name k) "="  (URLEncoder/encode v "UTF-8")))))
 
 (defn seconds->minutes
   "Turn to minutes, rounded up or down based on seconds left"

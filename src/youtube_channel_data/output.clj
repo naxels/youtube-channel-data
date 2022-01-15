@@ -1,8 +1,10 @@
 (ns youtube-channel-data.output
   (:require [clojure.data.json :as json]
             [clojure.java.io :as io]
-            [youtube-channel-data.utilities :as u]
-            [csv-exporter.core :as csv]))
+            [youtube-channel-data.utils :as u]
+            [csv-exporter.core :as csv])
+  (:import [java.time.format DateTimeFormatter]
+           [java.io File]))
 
 (set! *warn-on-reflection* true)
 
@@ -12,7 +14,7 @@
   "Output to output folder if exists, else to current location"
   []
   (if (.exists (io/file "output"))
-    (str "output" (java.io.File/separator))
+    (str "output" (File/separator))
     (str "")))
 
 (defn filename
@@ -56,8 +58,8 @@
      ; Playlist-item
      :thumbnail    (get-in playlist-item [:thumbnails :default :url])
      ; Playlist-item
-     :uploaded-at  (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt playlist-item))
+     :uploaded-at  (.format (DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt playlist-item))
      ; Video
-     :published-at (.format (java.time.format.DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt vid-s))
+     :published-at (.format (DateTimeFormatter/ISO_LOCAL_DATE) (:publishedAt vid-s))
      ; Video
      :duration     (u/seconds->minutes (.getSeconds ^java.time.Duration (:duration vid-cd)))}))

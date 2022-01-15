@@ -1,6 +1,6 @@
-(ns youtube-channel-data.utilities-test
+(ns youtube-channel-data.utils-test
   (:require [clojure.test :refer [deftest is]]
-            [youtube-channel-data.utilities :as u]))
+            [youtube-channel-data.utils :as u]))
 
 (deftest test-json-value-reader
   (is (= :testval (u/json-value-reader :test :testval)))

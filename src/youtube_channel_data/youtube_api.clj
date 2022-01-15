@@ -1,6 +1,6 @@
 (ns youtube-channel-data.youtube-api
   (:require [clojure.edn :as edn]
-            [youtube-channel-data.utilities :as u]))
+            [youtube-channel-data.utils :as u]))
 
 (set! *warn-on-reflection* true)
 
