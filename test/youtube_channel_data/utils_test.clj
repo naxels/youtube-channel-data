@@ -13,11 +13,12 @@
     ; Since JDK 9
     (is (= 6696 (.toSeconds duration-val)))))
 
-(deftest test-str->json
-  (is (= true (fn? (u/str->json u/json-value-reader)))))
+(deftest test-json-str->json
+  (is (= true (fn? (u/json-str->clj u/json-value-reader))))
+  (is (= {:wow "wow" :hey {:yo "hi"}} ((u/json-str->clj (fn [_ v] v)) "{\"wow\": \"wow\", \"hey\": {\"yo\": \"hi\"}}"))))
 
 (deftest test-channel->json
-  (is (= {:a "b"} (u/channel->json "{\"a\": \"b\"}"))))
+  (is (= {:a "b"} (u/channel->clj "{\"a\": \"b\"}"))))
 
 ; tests done in other deftests
 (deftest test-playlist->json)
