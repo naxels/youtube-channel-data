@@ -13,9 +13,9 @@
     ; Since JDK 9
     (is (= 6696 (.toSeconds duration-val)))))
 
-(deftest test-json-str->json
-  (is (= true (fn? (u/json-str->clj u/json-value-reader))))
-  (is (= {:wow "wow" :hey {:yo "hi"}} ((u/json-str->clj (fn [_ v] v)) "{\"wow\": \"wow\", \"hey\": {\"yo\": \"hi\"}}"))))
+(deftest test-json->clj
+  (is (= true (fn? (u/json->clj u/json-value-reader))))
+  (is (= {:wow "wow" :hey {:yo "hi"}} ((u/json->clj (fn [_ v] v)) "{\"wow\": \"wow\", \"hey\": {\"yo\": \"hi\"}}"))))
 
 (deftest test-channel->json
   (is (= {:a "b"} (u/channel->clj "{\"a\": \"b\"}"))))
