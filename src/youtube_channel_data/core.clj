@@ -25,10 +25,10 @@
   "Returns vec with [playlist-id, title]"
   [channel-id]
   (let [channel-item (->> (yt/channels {:part "contentDetails,brandingSettings" :id channel-id})
-                      (slurp)
-                      (u/channel->clj)
-                      (:items)
-                      (first))]
+                          (slurp)
+                          (u/channel->clj)
+                          (:items)
+                          (first))]
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
