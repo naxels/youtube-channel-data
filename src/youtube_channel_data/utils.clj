@@ -14,7 +14,7 @@
     :publishedAt (ZonedDateTime/parse value) ; https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html
     value))
 
-(defn str->json
+(defn json->clj
   [value-fn-func]
   (fn
     [json-str]
@@ -22,11 +22,11 @@
                    :value-fn value-fn-func ; each key/value will go through this function
                    :key-fn keyword)))
 
-(def channel->json (str->json (fn [_k v] v)))
+(def channel->clj (json->clj (fn [_k v] v)))
 
-(def playlist->json (str->json json-value-reader))
+(def playlist->clj (json->clj json-value-reader))
 
-(def video->json (str->json json-value-reader))
+(def video->clj (json->clj json-value-reader))
 
 ; Others
 (defn parse-input

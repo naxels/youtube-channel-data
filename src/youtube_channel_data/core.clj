@@ -15,7 +15,7 @@
   [video-id]
   (->> (yt/videos {:part "snippet" :id video-id})
        (slurp)
-       (u/video->json)
+       (u/video->clj)
        (:items)
        (first)
        (:snippet)
@@ -25,10 +25,10 @@
   "Returns vec with [playlist-id, title]"
   [channel-id]
   (let [channel-item (->> (yt/channels {:part "contentDetails,brandingSettings" :id channel-id})
-       (slurp)
-       (u/channel->json)
-       (:items)
-               (first))]
+                      (slurp)
+                      (u/channel->clj)
+                      (:items)
+                      (first))]
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
@@ -57,13 +57,13 @@
   ([url]
    (let [converted (-> url
                        (slurp)
-                       (u/playlist->json))]
+                       (u/playlist->clj))]
      (consume-playlist-pages (conj [] (:items converted)) url (:nextPageToken converted))))
   ([items-coll base-url page-token]
    (if page-token
      (let [converted (-> (str base-url "&" (u/query-params->query-string {:pageToken page-token}))
                          (slurp)
-                         (u/playlist->json))]
+                         (u/playlist->clj))]
        (recur (conj items-coll (:items converted)) base-url (:nextPageToken converted)))
      items-coll)))
 
@@ -72,14 +72,14 @@
   [base-url ids]
   (-> (str base-url "&" (u/query-params->query-string {:id (str/join "," ids)}))
       (slurp)
-      (u/video->json)
+      (u/video->clj)
       (:items)))
 
 (defn transform-playlist-items
   "Transform playlist-items & videos to output map"
   [playlist-items videos]
-  (map output/output-map playlist-items videos)
-  )
+  (map output/output-map playlist-items videos))
+
 
 (defn add-video-title-filter
   [{{filter-option :filter} :options :as data}]
