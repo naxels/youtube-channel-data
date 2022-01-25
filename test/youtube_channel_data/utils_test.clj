@@ -17,12 +17,12 @@
   (is (= true (fn? (u/json->clj u/json-value-reader))))
   (is (= {:wow "wow" :hey {:yo "hi"}} ((u/json->clj (fn [_ v] v)) "{\"wow\": \"wow\", \"hey\": {\"yo\": \"hi\"}}"))))
 
-(deftest test-channel->json
+(deftest test-channel->clj
   (is (= {:a "b"} (u/channel->clj "{\"a\": \"b\"}"))))
 
 ; tests done in other deftests
-(deftest test-playlist->json)
-(deftest test-video->json)
+(deftest test-playlist->clj)
+(deftest test-video->clj)
 
 (deftest test-parse-input
   ; using fake video id "monkey"
@@ -46,5 +46,10 @@
 
 (deftest test-title-match-builder
   (let [title-match? (u/title-match-builder "monkey")]
+    (is (= true (title-match? {:snippet {:title "MoNkEy island"}})))
+    (is (= false (title-match? {:snippet {:title "Human island"}})))))
+
+(deftest test-title-match?
+  (let [title-match? (partial u/title-match? "monkey")]
     (is (= true (title-match? {:snippet {:title "MoNkEy island"}})))
     (is (= false (title-match? {:snippet {:title "Human island"}})))))
