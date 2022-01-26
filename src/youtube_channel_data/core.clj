@@ -59,9 +59,8 @@
 
 (defn add-playlist-items
   [{:keys [video-title-filter playlist-id] :as data}]
-  (let [title-match? (u/title-match-builder video-title-filter)]
-    (assoc data :playlist-items (cond->> (yt-request/playlist-items playlist-id)
-                                  video-title-filter (filter title-match?)))))
+  (assoc data :playlist-items (cond->> (yt-request/playlist-items playlist-id)
+                                video-title-filter (filter (partial u/title-match? video-title-filter)))))
 
 (defn add-videos-data
   [{:keys [playlist-items] :as data}]
