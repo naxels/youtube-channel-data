@@ -16,7 +16,7 @@
   [route]
   (fn
     [query-params]
-    (let [query-string (u/query-params->query-string (conj query-params ytc/api-key))]
+    (let [query-string (u/query-params->query-string (conj query-params (ytc/api-key)))]
       (str base-url sub-path route "?" query-string))))
 
 ; Caller helper methods

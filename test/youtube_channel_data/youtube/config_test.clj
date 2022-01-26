@@ -6,4 +6,4 @@
 (deftest test-read-key)
 
 (deftest test-api-key
-  (is (= {:key (or ytc/read-key "")} ytc/api-key)))
+  (is (= {:key (or (ytc/read-key) "")} (ytc/api-key))))
