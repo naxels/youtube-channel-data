@@ -56,15 +56,6 @@
   [seconds]
   (Math/round (/ seconds 60.0)))
 
-; Closure
-(defn title-match-builder
-  "Returns fn"
-  [video-title-filter]
-  (fn [playlist-item] (-> playlist-item
-                          (get-in [:snippet :title] "")
-                          (str/lower-case)
-                          (str/includes? video-title-filter))))
-
 ; Partial
 (defn title-match?
   [video-title-filter playlist-item]

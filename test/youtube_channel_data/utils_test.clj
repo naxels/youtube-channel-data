@@ -44,11 +44,6 @@
   (is (= 1 (u/seconds->minutes 89)))
   (is (= 2 (u/seconds->minutes 90))))
 
-(deftest test-title-match-builder
-  (let [title-match? (u/title-match-builder "monkey")]
-    (is (= true (title-match? {:snippet {:title "MoNkEy island"}})))
-    (is (= false (title-match? {:snippet {:title "Human island"}})))))
-
 (deftest test-title-match?
   (let [title-match? (partial u/title-match? "monkey")]
     (is (= true (title-match? {:snippet {:title "MoNkEy island"}})))
