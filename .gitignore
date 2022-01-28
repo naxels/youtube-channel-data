@@ -8,3 +8,5 @@ output/*
 !output/.keep
 target/*
 .portal
+.idea/
+youtube-channel-data.iml
