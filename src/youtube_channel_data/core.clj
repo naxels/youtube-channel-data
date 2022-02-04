@@ -23,7 +23,7 @@
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
-(defn transform-playlist-items
+(defn playlist-items+videos->output-maps
   "Transform playlist-items & videos to output map"
   [playlist-items videos]
   (map output/output-map playlist-items videos))
@@ -68,7 +68,7 @@
 
 (defn add-transformed-playlist-items
   [{:keys [playlist-items videos] :as data}]
-  (assoc data :playlist-items-transformed (transform-playlist-items playlist-items videos)))
+  (assoc data :playlist-items-transformed (playlist-items+videos->output-maps playlist-items videos)))
 
 (defn output-to-file
   [{:keys [output playlist-items-transformed] :as data}]
