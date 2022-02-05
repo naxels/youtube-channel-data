@@ -23,8 +23,6 @@
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
-
-
 (defn add-video-title-filter
   [{{filter-option :filter} :options :as data}]
   (assoc data :video-title-filter (and filter-option
