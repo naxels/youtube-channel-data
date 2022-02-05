@@ -23,10 +23,7 @@
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
-(defn playlist-items+videos->output-maps
-  "Transform playlist-items & videos to output map"
-  [playlist-items videos]
-  (map output/output-map playlist-items videos))
+
 
 (defn add-video-title-filter
   [{{filter-option :filter} :options :as data}]
@@ -65,6 +62,11 @@
 (defn add-videos-data
   [{:keys [playlist-items] :as data}]
   (assoc data :videos (yt-request/playlist-items->videos playlist-items)))
+
+(defn playlist-items+videos->output-maps
+  "Transform playlist-items & videos to output map"
+  [playlist-items videos]
+  (map output/output-map playlist-items videos))
 
 (defn add-transformed-playlist-items
   [{:keys [playlist-items videos] :as data}]
