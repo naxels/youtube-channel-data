@@ -13,12 +13,13 @@
       "Invalid strings should return nil (for now).")))
 
 (deftest channel-id->playlist-id+title-test
-  (is (= (ytcd-core/channel-id->playlist-id+title "UCkDtCKtPKlsg-gJO_m5D0mQ")
-        ["UUkDtCKtPKlsg-gJO_m5D0mQ" "Telepurte"])
-    "Given Telepurte's channel id, this should return a vector of TP's main playlist ID and channel name.")
-  (is (= (ytcd-core/channel-id->playlist-id+title "UCLA_DiR1FfKNvjuUpBHmylQ")
-        ["UULA_DiR1FfKNvjuUpBHmylQ" "NASA"])
-    "Given NASA's channel id, this should return a vector of NASA's main playlist ID and channel name.")
-  (is (= (ytcd-core/channel-id->playlist-id+title "invalid-string")
-        [nil nil])
-    "Invalid strings should return a vector of nils (for now :( )"))
+  (binding [ytcd-core/*slurp* cm/local-slurp]
+    (is (= (ytcd-core/channel-id->playlist-id+title "UCkDtCKtPKlsg-gJO_m5D0mQ")
+          ["UUkDtCKtPKlsg-gJO_m5D0mQ" "Telepurte"])
+      "Given Telepurte's channel id, this should return a vector of TP's main playlist ID and channel name.")
+    (is (= (ytcd-core/channel-id->playlist-id+title "UCLA_DiR1FfKNvjuUpBHmylQ")
+          ["UULA_DiR1FfKNvjuUpBHmylQ" "NASA"])
+      "Given NASA's channel id, this should return a vector of NASA's main playlist ID and channel name.")
+    (is (= (ytcd-core/channel-id->playlist-id+title "invalid-string")
+          [nil nil])
+      "Invalid strings should return a vector of nils (for now :( )")))

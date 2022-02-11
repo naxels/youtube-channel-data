@@ -10,7 +10,10 @@
          "publishedAt": "2022-02-11T03:21:18Z",
          "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
          "title": "41 | peh peh peh peh",
-         "description": "TP Desc",
+         "description": "TP Desc
+                         wow this is not
+                         a valid json string :( ",
+
          "thumbnails": {
            "default": {
              "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/default.jpg",

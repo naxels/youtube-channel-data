@@ -1,0 +1,33 @@
+{
+   "kind": "youtube#channelListResponse",
+   "etag": "jp8XzBtQO3hDl6ieErUW6tlpS20",
+   "pageInfo": {
+     "totalResults": 1,
+     "resultsPerPage": 5
+   },
+   "items": [
+     {
+       "kind": "youtube#channel",
+       "etag": "Ftv-YEzCNPVq-9-CNqpsuUdLOR0",
+       "id": "UCLA_DiR1FfKNvjuUpBHmylQ",
+       "contentDetails": {
+         "relatedPlaylists": {
+           "likes": "",
+           "uploads": "UULA_DiR1FfKNvjuUpBHmylQ"
+         }
+       },
+       "brandingSettings": {
+         "channel": {
+           "title": "NASA",
+           "description": "NASA's mission is to pioneer the future in space exploration, scientific discovery and aeronautics research.",
+           "trackingAnalyticsAccountId": "UA-33523145-1",
+           "unsubscribedTrailer": "wJw_aBRKHFo"
+         },
+         "image": {
+           "bannerExternalUrl": "https://yt3.ggpht.com/sY2S5nRTNdtzp0iEST0ODFkvi1r_l4mh8izYGsI6TD7ABHFxMeO0C6BfJ5gIk8cmN7NcwK0tAA"
+         }
+       }
+     }
+   ]
+ }
+ 

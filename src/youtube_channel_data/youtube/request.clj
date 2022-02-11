@@ -18,9 +18,9 @@
 
 (defn channel
   "Request channels API from Youtube using channel-id and import JSON"
-  [channel-id]
+  [channel-id *slurp*]
   (-> (yt-url/channels {:part "contentDetails,brandingSettings" :id channel-id})
-      (slurp)
+      (*slurp*)
       (u/channel->clj)
       (:items)))
 
@@ -35,13 +35,15 @@
 
 (defn playlist-items->videos
   "Parallel request of videos API from Youtube per 50 id's
-   NOTE: API returns the videos based on the order of the id's"
-  [playlist-items]
+   NOTE: API returns the videos based on the order of the id's
+
+   Explicit slurp function to assist mocking."
+  [playlist-items *slurp*]
   (->> playlist-items
        (map (comp :videoId :resourceId :snippet))
        (partition-all 50) ; partition per 50 id's
        (pmap
-        (fn [ids] (video (str/join "," ids))))
+        (fn [ids] (video (str/join "," ids) *slurp*)))
        (apply concat)))
 
 (defn consume-playlist-pages

@@ -20,7 +20,7 @@
 (defn channel-id->playlist-id+title
   "Returns vec with [playlist-id, title]"
   [channel-id]
-  (let [channel-item (->> (yt-request/channel channel-id)
+  (let [channel-item (->> (yt-request/channel channel-id *slurp*)
                           (first))]
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
@@ -66,7 +66,7 @@
 
 (defn add-videos-data
   [{:keys [playlist-items] :as data}]
-  (assoc data :videos (yt-request/playlist-items->videos playlist-items)))
+  (assoc data :videos (yt-request/playlist-items->videos playlist-items *slurp*)))
 
 (defn add-transformed-playlist-items
   [{:keys [playlist-items videos] :as data}]
