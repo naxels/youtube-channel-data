@@ -8,10 +8,11 @@
 (declare consume-video-lists)
 
 (defn video
-  "Request videos API from Youtube using video-id(s) and import JSON"
-  [video-id]
+  "Request videos API from Youtube using video-id(s) and import JSON
+  we require an explicit *slurp* to assist in mocking from other functions"
+  [video-id *slurp*]
   (-> (yt-url/videos {:part "contentDetails,snippet" :id video-id})
-      (slurp)
+      (*slurp*)
       (u/video->clj)
       (:items)))
 

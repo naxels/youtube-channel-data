@@ -8,9 +8,11 @@
 
 (set! *warn-on-reflection* true)
 
+(def ^:dynamic *slurp* slurp)
+
 (defn video-id->channel-id
   [video-id]
-  (->> (yt-request/video video-id)
+  (->> (yt-request/video video-id *slurp*)
        (first)
        (:snippet)
        (:channelId)))
