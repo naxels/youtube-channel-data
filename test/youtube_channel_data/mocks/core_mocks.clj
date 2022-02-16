@@ -1,14 +1,15 @@
 (ns youtube-channel-data.mocks.core-mocks
-  (:require [clojure.test :refer :all]))
+  (:require [clojure.test :refer :all]
+            [youtube-channel-data.youtube.url :as yt-url]))
 
-;; Telepurte, from (videos {:part "contentDetails,snippet" :id "1DQ0j_9Pq-g"})
-(def tp-vid-id-url "https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2Csnippet&id=1DQ0j_9Pq-g&key=AIzaSyAvq_RD5Kl_ggdWDAN_Anmh5n-4F0qvZ8w")
-;; NASA, from (videos {:part "contentDetails,snippet" :id "ntkpK9gwEU4"})
-(def nasa-vid-id-url "https://www.googleapis.com/youtube/v3/videos?part=contentDetails%2Csnippet&id=ntkpK9gwEU4&key=AIzaSyAvq_RD5Kl_ggdWDAN_Anmh5n-4F0qvZ8w")
-;; Telepurte, from (channels {:part "contentDetails,brandingSettings" :id "UCkDtCKtPKlsg-gJO_m5D0mQ"})
-(def tp-chan-id-url "https://www.googleapis.com/youtube/v3/channels?part=contentDetails%2CbrandingSettings&id=UCkDtCKtPKlsg-gJO_m5D0mQ&key=AIzaSyAvq_RD5Kl_ggdWDAN_Anmh5n-4F0qvZ8w")
-;; NASA, from (channels {:part "contentDetails,brandingSettings" :id "UCLA_DiR1FfKNvjuUpBHmylQ"})
-(def nasa-chan-id-url "https://www.googleapis.com/youtube/v3/channels?part=contentDetails%2CbrandingSettings&id=UCLA_DiR1FfKNvjuUpBHmylQ&key=AIzaSyAvq_RD5Kl_ggdWDAN_Anmh5n-4F0qvZ8w")
+;; Telepurte video
+(def tp-vid-id-url (yt-url/videos {:part "contentDetails,snippet" :id "1DQ0j_9Pq-g"}))
+;; NASA video
+(def nasa-vid-id-url (yt-url/videos {:part "contentDetails,snippet" :id "ntkpK9gwEU4"}))
+;; Telepurte channel
+(def tp-chan-id-url (yt-url/channels {:part "contentDetails,brandingSettings" :id "UCkDtCKtPKlsg-gJO_m5D0mQ"}))
+;; NASA channel
+(def nasa-chan-id-url (yt-url/channels {:part "contentDetails,brandingSettings" :id "UCLA_DiR1FfKNvjuUpBHmylQ"}))
 
 (defn local-slurp
   [url]
