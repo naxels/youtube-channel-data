@@ -11,13 +11,17 @@
 ;; NASA channel
 (def nasa-chan-id-url (yt-url/channels {:part "contentDetails,brandingSettings" :id "UCLA_DiR1FfKNvjuUpBHmylQ"}))
 
+(def url-map {tp-vid-id-url (slurp "./test/youtube_channel_data/mocks/tp_vid_id_result.json")
+              nasa-vid-id-url (slurp "./test/youtube_channel_data/mocks/nasa_vid_id_result.json")
+              tp-chan-id-url (slurp "./test/youtube_channel_data/mocks/tp_chan_id_result.json")
+              nasa-chan-id-url (slurp "./test/youtube_channel_data/mocks/nasa_chan_id_result.json")})
+
 (defn local-slurp
   [url]
-  (cond
-    (= url tp-vid-id-url) (slurp "./test/youtube_channel_data/mocks/tp_vid_id_result.json")
-    (= url nasa-vid-id-url) (slurp "./test/youtube_channel_data/mocks/nasa_vid_id_result.json")
-    (= url tp-chan-id-url) (slurp "./test/youtube_channel_data/mocks/tp_chan_id_result.json")
-    (= url nasa-chan-id-url) (slurp "./test/youtube_channel_data/mocks/nasa_chan_id_result.json")
-    :else "{}"))
+  (get url-map url "{}"))
+
+
+
+
 
 
