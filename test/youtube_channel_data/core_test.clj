@@ -1,6 +1,7 @@
 (ns youtube-channel-data.core-test
   (:require [clojure.test :refer :all]
             [youtube-channel-data.core :as ytcd-core]
+            [youtube-channel-data.youtube.url :as yt-url]
             [youtube-channel-data.mocks.core-mocks :as cm]))
 
 (deftest video-id->channel-id-test
@@ -25,6 +26,27 @@
       "Invalid strings should return a vector of nils (for now :( )")))
 
 (deftest add-video-title-filter-test
-  (is (= (ytcd-core/add-video-title-filter {:options {:filter "twosday"}})
-        {:options {:filter "twosday"}, :video-title-filter "twosday"})
+  (is (= (ytcd-core/add-video-title-filter {:id-or-url "1DQ0j_9Pq-g"
+                                            :options   {:filter "twosday"}})
+        {:id-or-url          "1DQ0j_9Pq-g"
+         :options            {:filter "twosday"}
+         :video-title-filter "twosday"})
     "Given a filter option, the same hashmap should return with a :video-title-filter key"))
+
+(deftest add-video-id-test
+  (is (= (ytcd-core/add-video-id {:id-or-url "1DQ0j_9Pq-g"
+                                  :options   {:filter "twosday"}
+                                  :video-title-filter "twosday"})
+        {:id-or-url          "1DQ0j_9Pq-g"
+         :options            {:filter "twosday"}
+         :video-title-filter "twosday"
+         :video-id           "1DQ0j_9Pq-g"})
+    "Given a video id, should return a copied hashmap with the id with a :video-id key")
+  (is (= (ytcd-core/add-video-id {:id-or-url "youtube.com/watch?v=1DQ0j_9Pq-g"
+                                  :options   {:filter "twosday"}
+                                  :video-title-filter "twosday"})
+        {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g"
+         :options            {:filter "twosday"}
+         :video-title-filter "twosday"
+         :video-id           "1DQ0j_9Pq-g"})
+    "Given a video url, should return a copied hashmap with the id with a :video-id key"))
