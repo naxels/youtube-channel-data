@@ -23,3 +23,8 @@
     (is (= (ytcd-core/channel-id->playlist-id+title "invalid-string")
           [nil nil])
       "Invalid strings should return a vector of nils (for now :( )")))
+
+(deftest add-video-title-filter-test
+  (is (= (ytcd-core/add-video-title-filter {:options {:filter "twosday"}})
+        {:options {:filter "twosday"}, :video-title-filter "twosday"})
+    "Given a filter option, the same hashmap should return with a :video-title-filter key"))
