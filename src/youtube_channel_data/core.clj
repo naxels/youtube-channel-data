@@ -133,6 +133,11 @@
     :default "csv"]])
 
 (defn -main
+  "Start the app. Key examples:
+
+   options: {:output csv}, {:output csv, :filter \"twosday\"}
+   arguments: [\"1DQ0j_9Pq-g\"]
+   summary: \"The system cannot find the path specified...\""
   [& args]
   (let [{:keys [options arguments _errors summary]} (parse-opts args cli-options)]
     (if (empty? arguments)
