@@ -64,3 +64,20 @@
            :video-title-filter "twosday"
            :video-id           "1DQ0j_9Pq-g"
            :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ"}))))
+
+(deftest add-playlist-id+channel-title-test
+  (binding [ytcd-core/*slurp* cm/local-slurp]
+    (is (= (ytcd-core/add-playlist-id+channel-title {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g"
+                                                     :options            {:filter "twosday"}
+                                                     :video-title-filter "twosday"
+                                                     :video-id           "1DQ0j_9Pq-g"
+                                                     :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ"})
+          {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g"
+           :options            {:filter "twosday"}
+           :video-title-filter "twosday"
+           :video-id           "1DQ0j_9Pq-g"
+           :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ"
+           :playlist-id        "UUkDtCKtPKlsg-gJO_m5D0mQ"
+           :channel-title      "Telepurte"}))))
+
+
