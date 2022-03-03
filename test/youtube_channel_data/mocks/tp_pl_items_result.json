@@ -1,0 +1,2251 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "WoHPHLTyQI6WgCXVeHE8NefTL5c",
+  "nextPageToken": "EAAaBlBUOkNESQ",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "he7osY_cY-H-Dr1mWAHynJgs0Oc",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLndrY1BqU1I4QU9z",
+      "snippet": {
+        "publishedAt": "2022-03-01T04:19:30Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "59 | Just a regular Monday for Tele",
+        "description": "I took it easy today\nSong: https://youtu.be/PAe0gyrDSyg\n\nConsider helping the people of Ukraine by showing support for the affected by donating here:\nhttps://ukrainewar.carrd.co/\nSupport for the Ukranian Medical Front:\nhttps://www.peopleinneed.net/donate/once\nhttps://redcross.org.ua/en/donate/\nSupport for Ukranian children:\nhttps://www.unicef.org/ukraine/en/donate-now\nSupport for Refugees\nhttps://donate.unhcr.org/\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wkcPjSR8AOs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wkcPjSR8AOs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wkcPjSR8AOs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/wkcPjSR8AOs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/wkcPjSR8AOs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "wkcPjSR8AOs"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "XezG_PoJmaHuIAu_DfFy2J_NAP0",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnQyYjBHMzlOalk4",
+      "snippet": {
+        "publishedAt": "2022-02-28T06:43:29Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "58 | New game release",
+        "description": "Consider helping the people of Ukraine by showing support for the affected by donating here:\nhttps://ukrainewar.carrd.co/\nSupport for the Ukranian Medical Front:\nhttps://www.peopleinneed.net/donate/once\nhttps://redcross.org.ua/en/donate/\nSupport for Ukranian children:\nhttps://www.unicef.org/ukraine/en/donate-now\nSupport for Refugees\nhttps://donate.unhcr.org/\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/t2b0G39NjY8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/t2b0G39NjY8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/t2b0G39NjY8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/t2b0G39NjY8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/t2b0G39NjY8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "t2b0G39NjY8"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "drEgg1DNR2lfHMtIQU3HG1cm8HA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjRRZ1FXa3lIemxV",
+      "snippet": {
+        "publishedAt": "2022-02-27T05:10:44Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "57 | to the warmth",
+        "description": "Consider helping the people of Ukraine by showing support for the affected by donating here:\nhttps://ukrainewar.carrd.co/\nSupport for the Ukranian Medical Front:\nhttps://www.peopleinneed.net/donate/once\nhttps://redcross.org.ua/en/donate/\nSupport for Ukranian children:\nhttps://www.unicef.org/ukraine/en/donate-now\nSupport for Refugees\nhttps://donate.unhcr.org/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4QgQWkyHzlU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4QgQWkyHzlU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4QgQWkyHzlU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/4QgQWkyHzlU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/4QgQWkyHzlU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "4QgQWkyHzlU"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "_LSGUcbsUUIK1PkHJs_NfB0oAfg",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLllCbEI0eE12UTFJ",
+      "snippet": {
+        "publishedAt": "2022-02-26T03:23:25Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "56 | I wish I could do more",
+        "description": "Consider helping the people of Ukraine by showing support for the affected by donating here:\nhttps://ukrainewar.carrd.co/\nSupport for the Ukranian Medical Front:\nhttps://www.peopleinneed.net/donate/once\nhttps://redcross.org.ua/en/donate/\nSupport for Ukranian children:\nhttps://www.unicef.org/ukraine/en/donate-now\nSupport for Refugees\nhttps://donate.unhcr.org/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/YBlB4xMvQ1I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/YBlB4xMvQ1I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/YBlB4xMvQ1I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/YBlB4xMvQ1I/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/YBlB4xMvQ1I/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "YBlB4xMvQ1I"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "NVlt52P8TXiu1ts1tNZ71-PdoOQ",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjBtbVdfTGhkRXRr",
+      "snippet": {
+        "publishedAt": "2022-02-25T04:33:10Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "55 | we stand with you",
+        "description": "Consider helping the people of Ukraine by showing support for the affected by donating here:\nhttps://ukrainewar.carrd.co/\nSupport for the Ukranian Medical Front:\nhttps://www.peopleinneed.net/donate/once\nhttps://redcross.org.ua/en/donate/\nSupport for Ukranian children:\nhttps://www.unicef.org/ukraine/en/donate-now\nSupport for Refugees\nhttps://donate.unhcr.org/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/0mmW_LhdEtk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/0mmW_LhdEtk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/0mmW_LhdEtk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/0mmW_LhdEtk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "0mmW_LhdEtk"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "BN4Mg6Ox3KSN-xsiFju7_Z-d3Uo",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmtIQWx1YjBYS1Vz",
+      "snippet": {
+        "publishedAt": "2022-02-24T06:23:42Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "54 | not today, thanks",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kHAlub0XKUs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kHAlub0XKUs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kHAlub0XKUs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kHAlub0XKUs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "kHAlub0XKUs"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "y61JlbipF2OVrgCIndft-VmGKNM",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnJaNVpqRzYtY3JR",
+      "snippet": {
+        "publishedAt": "2022-02-23T01:06:37Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "53 | now THIS is twosday",
+        "description": "Song by Hechizeros Band: https://youtu.be/x47NYUbtYb0\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rZ5ZjG6-crQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rZ5ZjG6-crQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rZ5ZjG6-crQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/rZ5ZjG6-crQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 6,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "rZ5ZjG6-crQ"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "wbiza-TZ2ZfLjX2YYGvR4MrCzcc",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmNHaTM4eVBfR0xB",
+      "snippet": {
+        "publishedAt": "2022-02-22T03:37:20Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "52 | I felt like painting",
+        "description": "Music by Chopin: https://youtu.be/-gDinVAmtA0?t=4560\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cGi38yP_GLA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cGi38yP_GLA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cGi38yP_GLA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/cGi38yP_GLA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/cGi38yP_GLA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 7,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "cGi38yP_GLA"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "5v8DPEKy5YlfwqkFmouZcUvIzDA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLlhJaUdrajU2T1Zz",
+      "snippet": {
+        "publishedAt": "2022-02-21T05:06:41Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "51 | it was an ok day",
+        "description": "Music by Elijah Who: https://youtu.be/F9Qg6hhOkuc\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XIiGkj56OVs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XIiGkj56OVs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XIiGkj56OVs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/XIiGkj56OVs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/XIiGkj56OVs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 8,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "XIiGkj56OVs"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "-ynKAxSe1IV5TEka0GYoczWuKfA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmVlTUEwVmdSYnM0",
+      "snippet": {
+        "publishedAt": "2022-02-20T02:48:33Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "50 | get up, soldier",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eeMA0VgRbs4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eeMA0VgRbs4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eeMA0VgRbs4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/eeMA0VgRbs4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/eeMA0VgRbs4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 9,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "eeMA0VgRbs4"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "6qBbY9214_zBvPqRIn-VUvc1KEo",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkNJVHpfRGdaVVhr",
+      "snippet": {
+        "publishedAt": "2022-02-19T04:43:30Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "49 | a gift for you",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CITz_DgZUXk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CITz_DgZUXk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CITz_DgZUXk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/CITz_DgZUXk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/CITz_DgZUXk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 10,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "CITz_DgZUXk"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "pNxvTgjctzCURquFTewCawz0wmk",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnNTTXB3ZG9uRjlj",
+      "snippet": {
+        "publishedAt": "2022-02-18T05:40:40Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "48 | ever press your palms on your eyes?",
+        "description": "Music composed by David A. Logan \nhttps://www.orbsoundwerx.com/\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sSMpwdonF9c/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sSMpwdonF9c/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sSMpwdonF9c/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/sSMpwdonF9c/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/sSMpwdonF9c/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 11,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "sSMpwdonF9c"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "FZKHGF88c7t3Gkybz6d-QQ8nM7g",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjIweURXazFiNHZr",
+      "snippet": {
+        "publishedAt": "2022-02-17T08:19:11Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "47 | that's some power",
+        "description": "Song: https://youtu.be/C0PAym1jrWg\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/20yDWk1b4vk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/20yDWk1b4vk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/20yDWk1b4vk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/20yDWk1b4vk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/20yDWk1b4vk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 12,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "20yDWk1b4vk"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Mh_9TTqo19We3YJ45gFgEGRwpFA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkh0VGY2d255Mnp3",
+      "snippet": {
+        "publishedAt": "2022-02-16T06:19:48Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "46 | that bird...",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HtTf6wny2zw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HtTf6wny2zw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HtTf6wny2zw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/HtTf6wny2zw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/HtTf6wny2zw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 13,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "HtTf6wny2zw"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "G--wz1soiFRPkMghkZGEsc0bj-U",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkdZSnZfaE5sSTE4",
+      "snippet": {
+        "publishedAt": "2022-02-15T07:31:00Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "45 | fine boy",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/GYJv_hNlI18/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/GYJv_hNlI18/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/GYJv_hNlI18/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/GYJv_hNlI18/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 14,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "GYJv_hNlI18"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "sl9mqYPgXLAMdtvPw8xD8azq6lc",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLk9WUTZScmFvY0sw",
+      "snippet": {
+        "publishedAt": "2022-02-14T08:32:50Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "44 | When the cat pets you back",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OVQ6RraocK0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OVQ6RraocK0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OVQ6RraocK0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/OVQ6RraocK0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/OVQ6RraocK0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 15,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "OVQ6RraocK0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "1y7Qx-hfS-G1wwiCPDdrvZ4RSUo",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkVGX0RoQUFCU2VB",
+      "snippet": {
+        "publishedAt": "2022-02-13T04:07:39Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "43 | It's been a while, Chloe",
+        "description": "Song: https://youtu.be/HpkSa7j7XfI\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EF_DhAABSeA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/EF_DhAABSeA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/EF_DhAABSeA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/EF_DhAABSeA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/EF_DhAABSeA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 16,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "EF_DhAABSeA"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "R_EilxIv7D7Z5pbT0pcJ3d_hGUA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLl9UYTZuUFdJaGQw",
+      "snippet": {
+        "publishedAt": "2022-02-12T06:40:16Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "42 | bless you",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_Ta6nPWIhd0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_Ta6nPWIhd0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_Ta6nPWIhd0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/_Ta6nPWIhd0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/_Ta6nPWIhd0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 17,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "_Ta6nPWIhd0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "0o-u82NHKsVY8S1L1INCRVgYgrU",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjFEUTBqXzlQcS1n",
+      "snippet": {
+        "publishedAt": "2022-02-11T03:20:12Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "41 | peh peh peh peh",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1DQ0j_9Pq-g/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 18,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "1DQ0j_9Pq-g"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "iulqxYl6jg9ScFFNgTeB78zCrn8",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjE0SUVaM08xazQw",
+      "snippet": {
+        "publishedAt": "2022-02-10T05:38:24Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "40 | how to cook a bunny",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/14IEZ3O1k40/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/14IEZ3O1k40/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/14IEZ3O1k40/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/14IEZ3O1k40/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/14IEZ3O1k40/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 19,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "14IEZ3O1k40"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "TCP_wyGT66Z1jfUDV8OF0Nq8970",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLklqY0thTDEwTTY0",
+      "snippet": {
+        "publishedAt": "2022-02-09T07:48:51Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "39 | Nila pog",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IjcKaL10M64/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IjcKaL10M64/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IjcKaL10M64/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/IjcKaL10M64/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/IjcKaL10M64/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 20,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "IjcKaL10M64"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "ZTxShUgm2D3Tx-bfeRe-XXezNvc",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnAyNksyNFZrX3E4",
+      "snippet": {
+        "publishedAt": "2022-02-08T06:47:05Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "38 | what the cat doing",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/p26K24Vk_q8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/p26K24Vk_q8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/p26K24Vk_q8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/p26K24Vk_q8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/p26K24Vk_q8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 21,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "p26K24Vk_q8"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "btath3SmZZhXWQ2Y_MgUz_IgDCA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjJKSVUxa1ozMzE4",
+      "snippet": {
+        "publishedAt": "2022-02-07T06:47:39Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "37 | Sleepy day huh",
+        "description": "Song: https://youtu.be/0or7JmDhW9k\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2JIU1kZ3318/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2JIU1kZ3318/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2JIU1kZ3318/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/2JIU1kZ3318/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/2JIU1kZ3318/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 22,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "2JIU1kZ3318"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "QBJZjy_3z5KnfTM3m4BD8C3obEU",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkNqbzlacVJTVWFN",
+      "snippet": {
+        "publishedAt": "2022-02-06T06:32:28Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "36 | Nice meal?",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Cjo9ZqRSUaM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Cjo9ZqRSUaM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Cjo9ZqRSUaM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Cjo9ZqRSUaM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Cjo9ZqRSUaM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 23,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Cjo9ZqRSUaM"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "tQS5ICKq89UWyBh7EmNuMzcsdXE",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLk1RUW5SVW0yUHpB",
+      "snippet": {
+        "publishedAt": "2022-02-05T06:39:36Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "35 | I rested",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MQQnRUm2PzA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MQQnRUm2PzA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MQQnRUm2PzA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/MQQnRUm2PzA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/MQQnRUm2PzA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 24,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "MQQnRUm2PzA"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "yb7CSsCvofrSG-BHgJYyFkwHkEM",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjgxTDR6eUdQVy1v",
+      "snippet": {
+        "publishedAt": "2022-02-04T04:21:02Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "34 | all is fair...",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/81L4zyGPW-o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/81L4zyGPW-o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/81L4zyGPW-o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/81L4zyGPW-o/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/81L4zyGPW-o/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 25,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "81L4zyGPW-o"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "wnIeJKvjlaET51eBIK5u82omFV8",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnpOWlpKUVpjaFdj",
+      "snippet": {
+        "publishedAt": "2022-02-03T05:33:57Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "33 | not quite twosday",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/zNZZJQZchWc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/zNZZJQZchWc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/zNZZJQZchWc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/zNZZJQZchWc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/zNZZJQZchWc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 26,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "zNZZJQZchWc"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "BPIRF7zKDWVlkjg08Z_Addvg1Po",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkc3UUpIb1R2Ukhz",
+      "snippet": {
+        "publishedAt": "2022-02-02T06:44:36Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "32 | Happy Lunar New Years",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/G7QJHoTvRHs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/G7QJHoTvRHs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/G7QJHoTvRHs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/G7QJHoTvRHs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/G7QJHoTvRHs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 27,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "G7QJHoTvRHs"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "WcAUnOv-CAjkeldFTOodejLaBvM",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjczY1UzeWFJUHhJ",
+      "snippet": {
+        "publishedAt": "2022-02-01T04:10:35Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "31 | I have emotions",
+        "description": "maybe too many..\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/73cU3yaIPxI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/73cU3yaIPxI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/73cU3yaIPxI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/73cU3yaIPxI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 28,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "73cU3yaIPxI"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "fQmYECxhV6NJhcERqOxsEYAH7aI",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjE0WFB2U0hBcEF3",
+      "snippet": {
+        "publishedAt": "2022-01-31T06:41:31Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "30 | What does it mean to truly rest?",
+        "description": "Song: https://youtu.be/1FeogxNAJWY\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/14XPvSHApAw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/14XPvSHApAw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/14XPvSHApAw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/14XPvSHApAw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 29,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "14XPvSHApAw"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "OKaNu8J1hQEcTn3boTHZrhJpaMI",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLi1hX3AzalBlQnBv",
+      "snippet": {
+        "publishedAt": "2022-01-30T04:59:44Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "29 | I wish I had more time",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/-a_p3jPeBpo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/-a_p3jPeBpo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/-a_p3jPeBpo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/-a_p3jPeBpo/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 30,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "-a_p3jPeBpo"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "sKrX-ex9zw24swJp1wk7iKNUYgU",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmpOdU5pLTYzRXRR",
+      "snippet": {
+        "publishedAt": "2022-01-29T07:03:12Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "28 | A small interruption",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jNuNi-63EtQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jNuNi-63EtQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jNuNi-63EtQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/jNuNi-63EtQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/jNuNi-63EtQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 31,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "jNuNi-63EtQ"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "JNLAjoyZ07Ljm9n1LC53S1IzXcQ",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmR0Y2M0VFc5NC0w",
+      "snippet": {
+        "publishedAt": "2022-01-28T07:01:11Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "27 | hidden thoughts",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/dtcc4TW94-0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/dtcc4TW94-0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/dtcc4TW94-0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/dtcc4TW94-0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/dtcc4TW94-0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 32,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "dtcc4TW94-0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "WXFYRKFBi7OPC6GjgrMt56M9tFA",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnVGX0NjQ0pTZW1r",
+      "snippet": {
+        "publishedAt": "2022-01-27T07:09:36Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "26 | I know I'm not alone.",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uF_CcCJSemk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uF_CcCJSemk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uF_CcCJSemk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/uF_CcCJSemk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 33,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "uF_CcCJSemk"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "0eqOE9lfS3yZhNhTNFzM3Ip_exQ",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjJaZ1l4T0xyeVlR",
+      "snippet": {
+        "publishedAt": "2022-01-26T06:49:09Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "25 | I know.",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2ZgYxOLryYQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2ZgYxOLryYQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2ZgYxOLryYQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/2ZgYxOLryYQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/2ZgYxOLryYQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 34,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "2ZgYxOLryYQ"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "cO3ZKkm4WO4wQ0LJUaCjkqVcr5E",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLm9paUhlLTRyei1R",
+      "snippet": {
+        "publishedAt": "2022-01-25T06:29:25Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "24 | Welcome to the world",
+        "description": "Music: If you're happy and you know it by Christian Sands ( https://youtu.be/rKqefcP1glE )\n\nFollow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/oiiHe-4rz-Q/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/oiiHe-4rz-Q/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/oiiHe-4rz-Q/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/oiiHe-4rz-Q/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/oiiHe-4rz-Q/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 35,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "oiiHe-4rz-Q"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "SucyKc5KGLedsda4tMjx9clVpTU",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLlVhSHdUM1lPN3dj",
+      "snippet": {
+        "publishedAt": "2022-01-24T04:58:13Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "23 | sundays are for resting",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UaHwT3YO7wc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UaHwT3YO7wc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UaHwT3YO7wc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/UaHwT3YO7wc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 36,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "UaHwT3YO7wc"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "bujysKPYNpcMeD939AmTKcRg-Ak",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmMtOWxGamJqelZJ",
+      "snippet": {
+        "publishedAt": "2022-01-23T04:45:47Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "22 | \"I invested into nfts\"",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/c-9lFjbjzVI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/c-9lFjbjzVI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/c-9lFjbjzVI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/c-9lFjbjzVI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 37,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "c-9lFjbjzVI"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "69ZAymfnED5xmGN6hdEbf2a9k8o",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmNiZE5kd2pUQ08w",
+      "snippet": {
+        "publishedAt": "2022-01-22T04:26:35Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "21 | she tripped",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/cbdNdwjTCO0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/cbdNdwjTCO0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/cbdNdwjTCO0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/cbdNdwjTCO0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/cbdNdwjTCO0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 38,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "cbdNdwjTCO0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "16KV7wBxS5Kib8WcA4-IF8rufRI",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmdxdFUxZkc1cFMw",
+      "snippet": {
+        "publishedAt": "2022-01-21T02:38:27Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "20 | sweet nothings",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/gqtU1fG5pS0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/gqtU1fG5pS0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/gqtU1fG5pS0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/gqtU1fG5pS0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/gqtU1fG5pS0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 39,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "gqtU1fG5pS0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "yqVzgdT1VM9nesgZPw6LQBao72U",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLnNYUzI1YlJaN2N3",
+      "snippet": {
+        "publishedAt": "2022-01-20T05:50:26Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "19 | cut down the middle",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sXS25bRZ7cw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sXS25bRZ7cw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sXS25bRZ7cw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/sXS25bRZ7cw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/sXS25bRZ7cw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 40,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "sXS25bRZ7cw"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Ilt4iFVFxPucOefOXjaFQqjOlWo",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLlhKUXlqWjBwOTlr",
+      "snippet": {
+        "publishedAt": "2022-01-19T05:22:24Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "18 | aaaand I'm back",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XJQyjZ0p99k/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XJQyjZ0p99k/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XJQyjZ0p99k/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/XJQyjZ0p99k/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/XJQyjZ0p99k/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 41,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "XJQyjZ0p99k"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Z57Y3EMDVwqKsV4nAKI9F0goPzk",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLlBiOFlxNHo1MVhF",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:26:37Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "17 | Still not home, but I should be back tomorrow",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Pb8Yq4z51XE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Pb8Yq4z51XE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Pb8Yq4z51XE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Pb8Yq4z51XE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Pb8Yq4z51XE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 42,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Pb8Yq4z51XE"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "XZOBqh-ifwNJxr08Ap97QkvwqOc",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLk4tMk80MDF2LXVR",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:24:08Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "16 | Still out",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/N-2O401v-uQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/N-2O401v-uQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/N-2O401v-uQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 43,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "N-2O401v-uQ"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "qtCpLwzYL6h7o41xxppw60noTH4",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLjh5M293d09lTEZV",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:22:11Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "15 | Literally not even home right now",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8y3owwOeLFU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8y3owwOeLFU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8y3owwOeLFU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 44,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "8y3owwOeLFU"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "SjiPb920Y_kroFmBXv2NuQJPcuk",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLk1ndkRqUktEZ0pB",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:20:27Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "14 | Still on vacation",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MgvDjRKDgJA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MgvDjRKDgJA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MgvDjRKDgJA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 45,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "MgvDjRKDgJA"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "O8fN6pa22d_iM73T57nNGzRM2uI",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLlBfNVNsQzI1Tlhn",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:18:44Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "13 | Out on vacation",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/P_5SlC25NXg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/P_5SlC25NXg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/P_5SlC25NXg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/P_5SlC25NXg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/P_5SlC25NXg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 46,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "P_5SlC25NXg"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "HTu3HCq2eKFY9JXJaZeu_1JQ5UY",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLkxZZU55TFVwazNz",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:14:13Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "12 | Appeal",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LYeNyLUpk3s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LYeNyLUpk3s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LYeNyLUpk3s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 47,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "LYeNyLUpk3s"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "xdltSHcUDPh4au_Hi1NingzkjcI",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLk1zbnI0NWZLRHow",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:13:20Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "11 | Solid drawing",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Msnr45fKDz0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Msnr45fKDz0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Msnr45fKDz0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 48,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Msnr45fKDz0"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "GsC0Ijl4TnXvXpD3YX36u6mjdqM",
+      "id": "VVVrRHRDS3RQS2xzZy1nSk9fbTVEMG1RLmY1SFZVaHllc0xR",
+      "snippet": {
+        "publishedAt": "2022-01-10T00:09:54Z",
+        "channelId": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+        "title": "10 | Exaggeration",
+        "description": "Follow me here:\nhttps://twitter.com/Telepeturtle\nhttps://www.tiktok.com/@telepurte\nSupport me here:\nhttps://www.patreon.com/Telepurte",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/f5HVUhyesLQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/f5HVUhyesLQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/f5HVUhyesLQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Telepurte",
+        "playlistId": "UUkDtCKtPKlsg-gJO_m5D0mQ",
+        "position": 49,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "f5HVUhyesLQ"
+        },
+        "videoOwnerChannelTitle": "Telepurte",
+        "videoOwnerChannelId": "UCkDtCKtPKlsg-gJO_m5D0mQ"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 474,
+    "resultsPerPage": 50
+  }
+}

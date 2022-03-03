@@ -1,10 +1,10 @@
 (ns youtube-channel-data.core
   (:gen-class)
-  (:require   [clojure.string :as str]
-              [clojure.tools.cli :refer [parse-opts]]
-              [youtube-channel-data.output :as output]
-              [youtube-channel-data.utils :as u]
-              [youtube-channel-data.youtube.request :as yt-request]))
+  (:require [clojure.string :as str]
+            [clojure.tools.cli :refer [parse-opts]]
+            [youtube-channel-data.output :as output]
+            [youtube-channel-data.utils :as u]
+            [youtube-channel-data.youtube.request :as yt-request]))
 
 (set! *warn-on-reflection* true)
 
@@ -13,15 +13,15 @@
 (defn video-id->channel-id
   [video-id]
   (->> (yt-request/video video-id *slurp*)
-       (first)
-       (:snippet)
-       (:channelId)))
+    (first)
+    (:snippet)
+    (:channelId)))
 
 (defn channel-id->playlist-id+title
   "Returns vec with [playlist-id, title]"
   [channel-id]
   (let [channel-item (->> (yt-request/channel channel-id *slurp*)
-                          (first))]
+                       (first))]
     [(get-in channel-item [:contentDetails :relatedPlaylists :uploads])
      (get-in channel-item [:brandingSettings :channel :title])]))
 
@@ -33,7 +33,7 @@
 (defn add-video-title-filter
   [{{filter-option :filter} :options :as data}]
   (assoc data :video-title-filter (and filter-option
-                                       (str/lower-case filter-option))))
+                                    (str/lower-case filter-option))))
 
 (defn add-video-id
   [{:keys [id-or-url] :as data}]
@@ -47,13 +47,13 @@
   [{:keys [channel-id] :as data}]
   (let [[playlist-id channel-title] (channel-id->playlist-id+title channel-id)]
     (assoc data
-           :playlist-id playlist-id
-           :channel-title channel-title)))
+      :playlist-id playlist-id
+      :channel-title channel-title)))
 
 (defn add-output-data
   [{:keys [video-title-filter channel-title] :as data}]
-  (let [output-map {:location (output/location)
-                    :filename (output/filename video-title-filter channel-title)
+  (let [output-map {:location  (output/location)
+                    :filename  (output/filename video-title-filter channel-title)
                     :separator \.
                     :extension (output/extension (get-in data [:options :output]))}
         output (assoc output-map :file (apply str (vals output-map)))]
@@ -61,7 +61,7 @@
 
 (defn add-playlist-items
   [{:keys [video-title-filter playlist-id] :as data}]
-  (assoc data :playlist-items (cond->> (yt-request/playlist-items playlist-id)
+  (assoc data :playlist-items (cond->> (yt-request/playlist-items playlist-id *slurp*) ;enable mocking with dynamically bound *slurp*
                                 video-title-filter (filter (partial u/title-match? video-title-filter)))))
 
 (defn add-videos-data
@@ -96,25 +96,25 @@
 (defn pull-yt-channel-data
   [data]
   (-> data
-      (add-video-title-filter)
-      (add-video-id)
-      (notify "Video id found:" :video-id)
-      (notify-if "Filtering titles on:" :video-title-filter :video-title-filter)
-      (add-channel-id)
-      (notify "Channel Id:" :channel-id)
-      (add-playlist-id+channel-title)
-      (notify "Playlist Id:" :playlist-id)
-      (notify "Channel title:" :channel-title)
-      (add-output-data)
-      (notify "Getting all playlist items.....")
-      (add-playlist-items)
-      (notify "Playlist items found:" #(count (:playlist-items %)))
-      (notify "Getting all videos for duration data.....")
-      (add-videos-data)
-      (add-transformed-playlist-items)
-      (notify-if "Playlist items left after filtering:" #(count (:playlist-items-transformed %)) :video-title-filter)
-      (output-to-file)
-      (notify "Data saved to:" #(get-in % [:output :file]))))
+    (add-video-title-filter)
+    (add-video-id)
+    (notify "Video id found:" :video-id)
+    (notify-if "Filtering titles on:" :video-title-filter :video-title-filter)
+    (add-channel-id)
+    (notify "Channel Id:" :channel-id)
+    (add-playlist-id+channel-title)
+    (notify "Playlist Id:" :playlist-id)
+    (notify "Channel title:" :channel-title)
+    (add-output-data)
+    (notify "Getting all playlist items.....")
+    (add-playlist-items)
+    (notify "Playlist items found:" #(count (:playlist-items %)))
+    (notify "Getting all videos for duration data.....")
+    (add-videos-data)
+    (add-transformed-playlist-items)
+    (notify-if "Playlist items left after filtering:" #(count (:playlist-items-transformed %)) :video-title-filter)
+    (output-to-file)
+    (notify "Data saved to:" #(get-in % [:output :file]))))
 
 ; CLI
 (defn usage [options-summary]
@@ -127,7 +127,7 @@
         ""
         "Video id/url:"
         "Can be just the video id, full Youtube url or short Youtu.be url"]
-       (str/join \newline)))
+    (str/join \newline)))
 
 (def cli-options
   [["-f" "--filter SEARCHQUERY" "Search query to filter the channel video's on"]
@@ -141,5 +141,5 @@
       (println (usage summary))
       (do
         (pull-yt-channel-data {:id-or-url (first arguments) :options options})
-        (shutdown-agents) ; close futures thread pool used by pmap
+        (shutdown-agents)                                   ; close futures thread pool used by pmap
         (println "All done, exiting")))))

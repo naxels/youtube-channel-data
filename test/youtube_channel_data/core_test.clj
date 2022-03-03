@@ -2,7 +2,8 @@
   (:require [clojure.test :refer :all]
             [youtube-channel-data.core :as ytcd-core]
             [youtube-channel-data.youtube.url :as yt-url]
-            [youtube-channel-data.mocks.core-mocks :as cm]))
+            [youtube-channel-data.mocks.core-mocks :as cm]
+            [youtube-channel-data.resources.core-test :refer [tp-playlist-item-augmented-data]]))
 
 
 
@@ -102,3 +103,43 @@
                   :separator \.,
                   :extension "csv",
                   :file "output\\Telepurte-twosday.csv"}})))
+
+; Big Yoshi test here. How to mock it.
+; #object[java.time.ZonedDateTime 0x3d3c8b50 "2022-02-23T01:06:37Z"] causing errors. I want to stringify it.
+
+; add-playlist-items uses consume-pages which eventually creates urls with page tokens which differ every time.
+; gonna mock consume-playlist-pages.
+(deftest add-playlist-items-test
+  (binding [ytcd-core/*slurp* cm/local-slurp]
+    (let [tp-data {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g",
+                   :options            {:filter "twosday"},
+                   :video-title-filter "twosday",
+                   :video-id           "1DQ0j_9Pq-g",
+                   :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ",
+                   :playlist-id        "UUkDtCKtPKlsg-gJO_m5D0mQ",
+                   :channel-title      "Telepurte",
+                   :output             {:location  "output\\",
+                                        :filename  "Telepurte-twosday",
+                                        :separator \.,
+                                        :extension "csv",
+                                        :file      "output\\Telepurte-twosday.csv"}}
+          ;; Long variable names, but hopefully conveys the point.
+          stringify-published-at-in-snippet (fn [hm] (map #(update-in % [:snippet :publishedAt] (fn [d] (.toString d))) hm))
+          stringify-published-at #(update % :playlist-items stringify-published-at-in-snippet)]
+
+      ; A request with a nextPageToken
+      ; A request without it
+      ; Should exist in the mock.
+      ;(println (ytcd-core/add-playlist-items tp-data))
+      (println "Hewwo")
+      (let [str-fied (-> (ytcd-core/add-playlist-items tp-data) (stringify-published-at))
+            {:keys [playlist-items]} str-fied
+            [pli] playlist-items
+            {{publishedAt :publishedAt} :snippet} pli]
+        (println publishedAt))
+      (let [{:keys [playlist-items]} tp-playlist-item-augmented-data
+            [pli]  playlist-items
+            {{publishedAt :publishedAt} :snippet} pli]
+        (println publishedAt))
+      (is (= (-> (ytcd-core/add-playlist-items tp-data) (stringify-published-at))
+            tp-playlist-item-augmented-data)))))
