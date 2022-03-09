@@ -9,4 +9,12 @@
                   :extra-deps {io.github.cognitect-labs/test-runner
                                {:git/tag "v0.5.0" :git/sha "b3fd0d2"}}
                   :main-opts ["-m" "cognitect.test-runner"]
-                  :exec-fn cognitect.test-runner.api/test}}}
+                  :exec-fn cognitect.test-runner.api/test}
+           :cover {:extra-paths ["test"]
+                   :extra-deps {eftest/eftest {:mvn/version "0.5.9"}
+                                cloverage/cloverage {:mvn/version "1.2.2"}}
+                   :exec-fn     cloverage.coverage/run-project
+                   :exec-args {:test-ns-path ["test"]
+                               :src-ns-path ["src"]
+                               :runner :eftest
+                               :runner-opts {:fail-fast? true}}}}}
