@@ -11,6 +11,7 @@
 (def ^:dynamic *slurp* slurp)
 
 (defn video-id->channel-id
+  "Takes youtube video id string and returns the channelId from youtube"
   [video-id]
   (->> (yt-request/video video-id *slurp*)
     (first)
@@ -18,7 +19,7 @@
     (:channelId)))
 
 (defn channel-id->playlist-id+title
-  "Returns vec with [playlist-id, title]"
+  "Takes channel id string and returns vec with [playlist-id, title]"
   [channel-id]
   (let [channel-item (->> (yt-request/channel channel-id *slurp*)
                        (first))]
