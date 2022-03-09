@@ -92,18 +92,18 @@
                                      :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ"
                                      :playlist-id        "UUkDtCKtPKlsg-gJO_m5D0mQ"
                                      :channel-title      "Telepurte"})
-        {:id-or-url "youtube.com/watch?v=1DQ0j_9Pq-g",
-         :options {:filter "twosday"},
+        {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g",
+         :options            {:filter "twosday"},
          :video-title-filter "twosday",
-         :video-id "1DQ0j_9Pq-g",
-         :channel-id "UCkDtCKtPKlsg-gJO_m5D0mQ",
-         :playlist-id "UUkDtCKtPKlsg-gJO_m5D0mQ",
-         :channel-title "Telepurte",
-         :output {:location "output\\",
-                  :filename "Telepurte-twosday",
-                  :separator \.,
-                  :extension "csv",
-                  :file "output\\Telepurte-twosday.csv"}})))
+         :video-id           "1DQ0j_9Pq-g",
+         :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ",
+         :playlist-id        "UUkDtCKtPKlsg-gJO_m5D0mQ",
+         :channel-title      "Telepurte",
+         :output             {:location  (str "output" (File/separator)),
+                              :filename  "Telepurte-twosday",
+                              :separator \.,
+                              :extension "csv",
+                              :file      (str "output" (File/separator) "Telepurte-twosday.csv")}})))
 
 
 (deftest add-playlist-items-test
