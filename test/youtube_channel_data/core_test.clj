@@ -1,5 +1,5 @@
 (ns youtube-channel-data.core-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [youtube-channel-data.core :as ytcd-core]
             [youtube-channel-data.mocks.core-mocks :as cm]
             [youtube-channel-data.resources.core-test :refer [tp-playlist-item-augmented-data]])
