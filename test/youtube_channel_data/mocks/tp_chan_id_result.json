@@ -1,0 +1,33 @@
+{
+   "kind": "youtube#channelListResponse",
+   "etag": "rdO_2T0jLMEeJUIqnfxGCL1UkSg",
+   "pageInfo": {
+     "totalResults": 1,
+     "resultsPerPage": 5
+   },
+   "items": [
+     {
+       "kind": "youtube#channel",
+       "etag": "qCcjd-vErc1JSi0iMcvMQQ_LTRQ",
+       "id": "UCkDtCKtPKlsg-gJO_m5D0mQ",
+       "contentDetails": {
+         "relatedPlaylists": {
+           "likes": "",
+           "uploads": "UUkDtCKtPKlsg-gJO_m5D0mQ"
+         }
+       },
+       "brandingSettings": {
+         "channel": {
+           "title": "Telepurte",
+           "description": "Hello everyone, I am telepurte, that guy from twitter. I make animations and I eat ass and I'm all out of ass",
+           "unsubscribedTrailer": "_RMy8ELr9mE",
+           "country": "CO"
+         },
+         "image": {
+           "bannerExternalUrl": "https://yt3.ggpht.com/uFRbz_scTUjuauvYOpKRA22c_3h5Rzr6rDDlN8Lg1fvn437uW3fHEugTv-ep4RnL_tXzNkiBLQ"
+         }
+       }
+     }
+   ]
+ }
+ 
