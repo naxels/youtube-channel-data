@@ -1,7 +1,6 @@
 (ns youtube-channel-data.core-test
   (:require [clojure.test :refer :all]
             [youtube-channel-data.core :as ytcd-core]
-            [youtube-channel-data.youtube.url :as yt-url]
             [youtube-channel-data.mocks.core-mocks :as cm]
             [youtube-channel-data.resources.core-test :refer [tp-playlist-item-augmented-data]])
   (:import [java.io File]))
