@@ -120,8 +120,33 @@
                                         :extension "csv",
                                         :file      (str "output" (File/separator) "Telepurte-twosday.csv")}}
           pli-data (ytcd-core/add-playlist-items tp-data)
-          {:keys [act-playlist-items]} pli-data
-          {:keys [exp-playlist-items]} tp-playlist-item-augmented-data]
+          {act-playlist-items :playlist-items} pli-data
+          {exp-playlist-items :playlist-items} tp-playlist-item-augmented-data]
       ; TODO: More comprehensive tests.
       (is (= (count act-playlist-items)
             (count exp-playlist-items))))))
+
+; A standard  API call works with many playlist items, so I felt overwhelmed by this until I remembered
+; we only test with a couple items. Though this parallel-ly requests the API for each 50 video ids, so
+; a TODO: is to test with >50 video ids.
+(deftest add-videos-data-test
+  (binding [ytcd-core/*slurp* cm/local-slurp]
+    (let [tp-data {:id-or-url          "youtube.com/watch?v=1DQ0j_9Pq-g",
+                   :options            {:filter "twosday"},
+                   :video-title-filter "twosday",
+                   :video-id           "1DQ0j_9Pq-g",
+                   :channel-id         "UCkDtCKtPKlsg-gJO_m5D0mQ",
+                   :playlist-id        "UUkDtCKtPKlsg-gJO_m5D0mQ",
+                   :channel-title      "Telepurte",
+                   :output             {:location  (str "output" (File/separator)),
+                                        :filename  "Telepurte-twosday",
+                                        :separator \.,
+                                        :extension "csv",
+                                        :file      (str "output" (File/separator) "Telepurte-twosday.csv")}}
+          pli-data (ytcd-core/add-playlist-items tp-data)
+          video-data (ytcd-core/add-videos-data pli-data)]
+      (is (= 2 (count (:videos video-data)))))))
+
+
+
+

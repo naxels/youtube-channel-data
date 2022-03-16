@@ -15,14 +15,15 @@
 #_(def tp-pl-id-np-url (yt-url/playlist-items {:part "snippet" :maxResults "50" :playlistId "UUkDtCKtPKlsg-gJO_m5D0mQ"
                                                :nextPageToken "EAAaBlBUOkNESQ"}))
 (def tp-pl-id-np-url "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUkDtCKtPKlsg-gJO_m5D0mQ&key=AIzaSyAvq_RD5Kl_ggdWDAN_Anmh5n-4F0qvZ8w&pageToken=EAAaBlBUOkNESQ")
-
+(def tp-vid-ids-from-pl-items (yt-url/videos {:part "contentDetails,snippet" :id "rZ5ZjG6-crQ,zNZZJQZchWc"}))
 
 (def url-map {tp-vid-id-url (slurp "./test/youtube_channel_data/mocks/tp_vid_id_result.json")
               nasa-vid-id-url (slurp "./test/youtube_channel_data/mocks/nasa_vid_id_result.json")
               tp-chan-id-url (slurp "./test/youtube_channel_data/mocks/tp_chan_id_result.json")
               nasa-chan-id-url (slurp "./test/youtube_channel_data/mocks/nasa_chan_id_result.json")
               tp-pl-id-url (slurp "./test/youtube_channel_data/mocks/tp_pl_items_result.json")
-              tp-pl-id-np-url (slurp "./test/youtube_channel_data/mocks/tp_pl_items_result_2.json")})
+              tp-pl-id-np-url (slurp "./test/youtube_channel_data/mocks/tp_pl_items_result_2.json")
+              tp-vid-ids-from-pl-items (slurp "./test/youtube_channel_data/mocks/tp_vid_ids_from_pl_items_result.json")})
 
 
 (defn local-slurp
