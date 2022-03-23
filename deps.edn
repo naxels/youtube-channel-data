@@ -1,9 +1,9 @@
 {:paths ["src"]
- :deps {org.clojure/clojure {:mvn/version "1.10.3"}
+ :deps {org.clojure/clojure {:mvn/version "1.11.0"}
         org.clojure/data.json {:mvn/version "2.4.0"}
         org.clojure/tools.cli {:mvn/version "1.0.206"}
         org.clojars.crowbrammer/csv-exporter {:mvn/version "0.1.0"}}
- :aliases {:build {:extra-deps {io.github.clojure/tools.build {:git/tag "v0.8.0" :git/sha "e3e3532"}}
+ :aliases {:build {:extra-deps {io.github.clojure/tools.build {:git/tag "v0.8.1" :git/sha "7d40500"}}
                    :ns-default build}
            :test {:extra-paths ["test"]
                   :extra-deps {io.github.cognitect-labs/test-runner
