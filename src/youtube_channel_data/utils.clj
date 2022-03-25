@@ -1,6 +1,7 @@
 (ns youtube-channel-data.utils
   (:require [clojure.data.json :as json]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [clojure.math :as m])
   (:import [java.time Duration ZonedDateTime]
            [java.net URLEncoder]))
 
@@ -54,7 +55,7 @@
 (defn seconds->minutes
   "Turn to minutes, rounded up or down based on seconds left"
   [seconds]
-  (Math/round (/ seconds 60.0)))
+  (m/round (/ seconds 60.0)))
 
 ; Partial
 (defn title-match?
