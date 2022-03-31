@@ -1,6 +1,5 @@
 (ns youtube-channel-data.mocks.core-mocks
-  (:require [clojure.test :refer :all]
-            [youtube-channel-data.youtube.url :as yt-url]))
+  (:require [youtube-channel-data.youtube.url :as yt-url]))
 
 ;; Telepurte video
 (def tp-vid-id-url (yt-url/videos {:part "contentDetails,snippet" :id "1DQ0j_9Pq-g"}))
