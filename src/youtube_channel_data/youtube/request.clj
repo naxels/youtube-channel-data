@@ -46,21 +46,17 @@
        (apply concat)))
 
 (defn consume-playlist-pages
-  "Get all playlist-items by using :nextPageToken until no more and import all JSON's
-   Has to be consumed sequentially since we need the nextPageToken from the result"
-  ([url *slurp*]
-   (let [converted (-> url
-                       (*slurp*)
-                       (u/playlist->clj))]
-     (consume-playlist-pages (conj [] (:items converted)) url (:nextPageToken converted) *slurp*)))
-  ([items-coll base-url page-token *slurp*]
+  "Get all playlist-items by using :nextPageToken until no more and import all JSON's.
+  This will return a sequence of 50-item sequences. To enable parallel data processing,
+  we don't concat until a later function."
+  [playlist-url *slurp*]
+  (iteration
+    ;; Pull playlist page. Append any tokens to the playlist params, request it, then clj-ify it.
+    (fn [page-token]
+      (cond-> playlist-url
+        page-token (str "&" (u/query-params->query-string {:pageToken page-token})) ; nil turns into ""; nothing will be appended if no page token.
+        true (*slurp*)
+        true (u/playlist->clj)))
+    :kf :nextPageToken
+    :vf :items))
 
-   (if page-token
-     ; Added next-url to pull urls for mocking.
-     (let [next-url (str base-url "&" (u/query-params->query-string {:pageToken page-token}))
-           converted (-> next-url
-                       (*slurp*)
-                       (u/playlist->clj))]
-
-       (recur (conj items-coll (:items converted)) base-url (:nextPageToken converted) *slurp*))
-     items-coll)))
