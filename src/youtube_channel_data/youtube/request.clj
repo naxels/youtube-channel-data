@@ -29,8 +29,7 @@
   [playlist-id *slurp*]
   (as-> (yt-url/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id}) pli
        (consume-playlist-pages pli *slurp*)
-       ; Note: (apply concat) is faster than using conj / into while consuming
-       (apply concat pli)))
+       (sequence cat pli)))
 
 (defn playlist-items->videos
   "Parallel request of videos API from Youtube per 50 id's
@@ -43,7 +42,7 @@
        (partition-all 50) ; partition per 50 id's
        (pmap
         (fn [ids] (video (str/join "," ids) *slurp*)))
-       (apply concat)))
+       (sequence cat)))
 
 (defn consume-playlist-pages
   "Get all playlist-items by using :nextPageToken until no more and import all JSON's.
@@ -59,4 +58,3 @@
         true (u/playlist->clj)))
     :kf :nextPageToken
     :vf :items))
-
