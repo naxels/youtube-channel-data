@@ -5,6 +5,7 @@
             [youtube-channel-data.youtube.url :as yt-url]))
 
 (declare consume-playlist-pages)
+(declare consume-playlist-page)
 
 (defn video
   "Request videos API from Youtube using video-id(s) and import JSON
@@ -27,9 +28,9 @@
   "Request playlist-items API from Youtube using playlist-id and import JSON
    NOTE: API returns the playlist items based on position in the playlist"
   [playlist-id *slurp*]
-  (as-> (yt-url/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id}) pli
-       (consume-playlist-pages pli *slurp*)
-       (sequence cat pli)))
+  (let [pli (yt-url/playlist-items {:part "snippet" :maxResults "50" :playlistId playlist-id})]
+    (->> (consume-playlist-pages pli *slurp*)
+         (sequence cat))))
 
 (defn playlist-items->videos
   "Parallel request of videos API from Youtube per 50 id's
@@ -50,11 +51,17 @@
   we don't concat until a later function."
   [playlist-url *slurp*]
   (iteration
-    ;; Pull playlist page. Append any tokens to the playlist params, request it, then clj-ify it.
-    (fn [page-token]
-      (cond-> playlist-url
-        page-token (str "&" (u/query-params->query-string {:pageToken page-token})) ; nil turns into ""; nothing will be appended if no page token.
-        true (*slurp*)
-        true (u/playlist->clj)))
-    :kf :nextPageToken
-    :vf :items))
+   (consume-playlist-page playlist-url *slurp*)
+   :kf :nextPageToken
+   :vf :items))
+
+(defn consume-playlist-page
+  "Returns a playlist-page closure
+   Append token (if given) to the playlist params, request it, then translate to clj."
+  [playlist-url *slurp*]
+  (fn
+    [page-token]
+    (cond-> playlist-url
+      page-token (str "&" (u/query-params->query-string {:pageToken page-token})) ; nil turns into ""; nothing will be appended if no page token.
+      true (*slurp*)
+      true (u/playlist->clj))))
